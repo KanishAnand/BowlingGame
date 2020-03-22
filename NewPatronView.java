@@ -31,7 +31,6 @@ public class NewPatronView implements ActionListener {
 
 	private JFrame win;
 	private JButton abort, finished;
-//	private JLabel nickLabel, fullLabel, emailLabel;
 	private JTextField nickField, fullField, emailField;
 	private String nick, full, email;
 
