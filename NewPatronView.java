@@ -31,7 +31,7 @@ public class NewPatronView implements ActionListener {
 
 	private JFrame win;
 	private JButton abort, finished;
-	private JLabel nickLabel, fullLabel, emailLabel;
+//	private JLabel nickLabel, fullLabel, emailLabel;
 	private JTextField nickField, fullField, emailField;
 	private String nick, full, email;
 
@@ -57,30 +57,9 @@ public class NewPatronView implements ActionListener {
 		patronPanel.setLayout(new GridLayout(3, 1));
 		patronPanel.setBorder(new TitledBorder("Your Info"));
 
-		JPanel nickPanel = new JPanel();
-		nickPanel.setLayout(new FlowLayout());
-		nickLabel = new JLabel("Nick Name");
-		nickField = new JTextField("", 15);
-		nickPanel.add(nickLabel);
-		nickPanel.add(nickField);
-
-		JPanel fullPanel = new JPanel();
-		fullPanel.setLayout(new FlowLayout());
-		fullLabel = new JLabel("Full Name");
-		fullField = new JTextField("", 15);
-		fullPanel.add(fullLabel);
-		fullPanel.add(fullField);
-
-		JPanel emailPanel = new JPanel();
-		emailPanel.setLayout(new FlowLayout());
-		emailLabel = new JLabel("E-Mail");
-		emailField = new JTextField("", 15);
-		emailPanel.add(emailLabel);
-		emailPanel.add(emailField);
-
-		patronPanel.add(nickPanel);
-		patronPanel.add(fullPanel);
-		patronPanel.add(emailPanel);
+		nickField = MakeField("Nick Name",patronPanel);
+		fullField = MakeField("Full Name",patronPanel);
+		emailField = MakeField("E-Mail",patronPanel);
 
 		// Button Panel
 		JPanel buttonPanel = new JPanel();
@@ -118,6 +97,18 @@ public class NewPatronView implements ActionListener {
 			((screenSize.height) / 2) - ((win.getSize().height) / 2));
 		win.show();
 
+	}
+
+
+	public JTextField MakeField(String st,JPanel patronPanel){
+		JPanel obj  = new JPanel();
+		obj.setLayout((new FlowLayout()));
+		JLabel label = new JLabel(st);
+		JTextField text = new JTextField("",15);
+		obj.add(label);
+		obj.add(text);
+		patronPanel.add(obj);
+		return text;
 	}
 
 	public void actionPerformed(ActionEvent e) {
