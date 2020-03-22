@@ -21,7 +21,7 @@ import javax.swing.event.*;
 
 import java.util.*;
 
-public class ControlDeskView implements ActionListener, ControlDeskObserver{
+public class ControlDeskView  extends ViewComponents implements ActionListener, ControlDeskObserver{
 
 	private JButton addParty, finished, assign;
 	private JFrame win;
@@ -43,47 +43,25 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 		this.maxMembers = maxMembers;
 		int numLanes = controlDesk.getNumLanes();
 
-		win = new JFrame("Control Desk");
-		win.getContentPane().setLayout(new BorderLayout());
-		((JPanel) win.getContentPane()).setOpaque(false);
+		win = MakeWindow("Control Desk");
 
-		JPanel colPanel = new JPanel();
-		colPanel.setLayout(new BorderLayout());
+		JPanel colPanel = MakeMainPanel();
 
 		// Controls Panel
-		JPanel controlsPanel = new JPanel();
-		controlsPanel.setLayout(new GridLayout(3, 1));
-		controlsPanel.setBorder(new TitledBorder("Controls"));
+		JPanel controlsPanel = MakePanel(3,1,"Controls");
 
-		addParty = new JButton("Add Party");
-		JPanel addPartyPanel = new JPanel();
-		addPartyPanel.setLayout(new FlowLayout());
-		addParty.addActionListener(this);
-		addPartyPanel.add(addParty);
-		controlsPanel.add(addPartyPanel);
-
-		assign = new JButton("Assign Lanes");
-		JPanel assignPanel = new JPanel();
-		assignPanel.setLayout(new FlowLayout());
-		assign.addActionListener(this);
-		assignPanel.add(assign);
-//		controlsPanel.add(assignPanel);
-
-		finished = new JButton("Finished");
-		JPanel finishedPanel = new JPanel();
-		finishedPanel.setLayout(new FlowLayout());
-		finished.addActionListener(this);
-		finishedPanel.add(finished);
-		controlsPanel.add(finishedPanel);
+		//Buttons
+		addParty = MakeButtons("Add Party",controlsPanel);
+		assign = MakeButtons("Assign Lanes",controlsPanel);
+		finished = MakeButtons("Finished",controlsPanel);
 
 		// Lane Status Panel
-		JPanel laneStatusPanel = new JPanel();
-		laneStatusPanel.setLayout(new GridLayout(numLanes, 1));
-		laneStatusPanel.setBorder(new TitledBorder("Lane Status"));
+		JPanel laneStatusPanel = MakePanel(numLanes,1,"Lane Status");
 
 		HashSet lanes=controlDesk.getLanes();
 		Iterator it = lanes.iterator();
 		int laneCount=0;
+
 		while (it.hasNext()) {
 			Lane curLane = (Lane) it.next();
 			LaneStatusView laneStat = new LaneStatusView(curLane,(laneCount+1));
@@ -116,9 +94,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 		colPanel.add(laneStatusPanel, "Center");
 		colPanel.add(partyPanel, "West");
 
-		win.getContentPane().add("Center", colPanel);
-
-		win.pack();
+		AddContentsToWindow(win,colPanel);
 
 		/* Close program when this window closes */
 		win.addWindowListener(new WindowAdapter() {
@@ -128,10 +104,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 		});
 
 		// Center Window on Screen
-		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
-		win.setLocation(
-			((screenSize.width) / 2) - ((win.getSize().width) / 2),
-			((screenSize.height) / 2) - ((win.getSize().height) / 2));
+		SetWindowPosition(win);
 		win.show();
 
 	}

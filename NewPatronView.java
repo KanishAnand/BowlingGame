@@ -25,7 +25,7 @@ import javax.swing.event.*;
 import java.util.*;
 import java.text.*;
 
-public class NewPatronView implements ActionListener {
+public class NewPatronView extends ViewComponents implements ActionListener {
 
 	private int maxSize;
 
@@ -44,16 +44,12 @@ public class NewPatronView implements ActionListener {
 		addParty=v;	
 		done = false;
 
-		win = new JFrame("Add Patron");
-		win.getContentPane().setLayout(new BorderLayout());
-		((JPanel) win.getContentPane()).setOpaque(false);
+		win = MakeWindow("Add Patron");
 
-		JPanel colPanel = new JPanel();
-		colPanel.setLayout(new BorderLayout());
+		JPanel colPanel = MakeMainPanel();
 
 		// Patron Panel
-		JPanel patronPanel = MakePanel(3,1);
-		patronPanel.setBorder(new TitledBorder("Your Info"));
+		JPanel patronPanel = MakePanel(3,1,"Your Info");
 
 		// Controls Panel
 		nickField = MakeField("Nick Name",patronPanel);
@@ -61,7 +57,7 @@ public class NewPatronView implements ActionListener {
 		emailField = MakeField("E-Mail",patronPanel);
 
 		// Button Panel
-		JPanel buttonPanel = MakePanel(4,1);
+		JPanel buttonPanel = MakePanel(4,1,"Buttons");
 		Insets buttonMargin = new Insets(4, 4, 4, 4);
 
 		finished = MakeButtons("Add Patron",buttonPanel);
@@ -71,48 +67,12 @@ public class NewPatronView implements ActionListener {
 		colPanel.add(patronPanel, "Center");
 		colPanel.add(buttonPanel, "East");
 
-		win.getContentPane().add("Center", colPanel);
-
-		win.pack();
+		AddContentsToWindow(win,colPanel);
 
 		// Center Window on Screen
 		SetWindowPosition(win);
 		win.show();
 
-	}
-
-	public void SetWindowPosition(JFrame win){
-		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
-		win.setLocation(
-				((screenSize.width) / 2) - ((win.getSize().width) / 2),
-				((screenSize.height) / 2) - ((win.getSize().height) / 2));
-	}
-
-	public JPanel MakePanel(int row,int col){
-		JPanel panel = new JPanel();
-		panel.setLayout(new GridLayout(row,col));
-		return panel;
-	}
-
-	public JTextField MakeField(String st,JPanel patronPanel){
-		JPanel obj  = new JPanel();
-		obj.setLayout((new FlowLayout()));
-		JLabel label = new JLabel(st);
-		JTextField text = new JTextField("",15);
-		obj.add(label);
-		obj.add(text);
-		patronPanel.add(obj);
-		return text;
-	}
-
-	public JButton MakeButtons(String st,JPanel buttonPanel){
-		JButton btn = new JButton(st);
-		JPanel btnPanel = new JPanel();
-		btnPanel.setLayout(new FlowLayout());
-		btn.addActionListener(this);
-		btnPanel.add(btn);
-		buttonPanel.add(btn);
-		return btn;
 	}
 
 	public void actionPerformed(ActionEvent e) {
