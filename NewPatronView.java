@@ -52,34 +52,20 @@ public class NewPatronView implements ActionListener {
 		colPanel.setLayout(new BorderLayout());
 
 		// Patron Panel
-		JPanel patronPanel = new JPanel();
-		patronPanel.setLayout(new GridLayout(3, 1));
+		JPanel patronPanel = MakePanel(3,1);
 		patronPanel.setBorder(new TitledBorder("Your Info"));
 
+		// Controls Panel
 		nickField = MakeField("Nick Name",patronPanel);
 		fullField = MakeField("Full Name",patronPanel);
 		emailField = MakeField("E-Mail",patronPanel);
 
 		// Button Panel
-		JPanel buttonPanel = new JPanel();
-		buttonPanel.setLayout(new GridLayout(4, 1));
-
+		JPanel buttonPanel = MakePanel(4,1);
 		Insets buttonMargin = new Insets(4, 4, 4, 4);
 
-		finished = new JButton("Add Patron");
-		JPanel finishedPanel = new JPanel();
-		finishedPanel.setLayout(new FlowLayout());
-		finished.addActionListener(this);
-		finishedPanel.add(finished);
-
-		abort = new JButton("Abort");
-		JPanel abortPanel = new JPanel();
-		abortPanel.setLayout(new FlowLayout());
-		abort.addActionListener(this);
-		abortPanel.add(abort);
-
-		buttonPanel.add(abortPanel);
-		buttonPanel.add(finishedPanel);
+		finished = MakeButtons("Add Patron",buttonPanel);
+		abort = MakeButtons("Abort",buttonPanel);
 
 		// Clean up main panel
 		colPanel.add(patronPanel, "Center");
@@ -90,14 +76,23 @@ public class NewPatronView implements ActionListener {
 		win.pack();
 
 		// Center Window on Screen
-		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
-		win.setLocation(
-			((screenSize.width) / 2) - ((win.getSize().width) / 2),
-			((screenSize.height) / 2) - ((win.getSize().height) / 2));
+		SetWindowPosition(win);
 		win.show();
 
 	}
 
+	public void SetWindowPosition(JFrame win){
+		Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
+		win.setLocation(
+				((screenSize.width) / 2) - ((win.getSize().width) / 2),
+				((screenSize.height) / 2) - ((win.getSize().height) / 2));
+	}
+
+	public JPanel MakePanel(int row,int col){
+		JPanel panel = new JPanel();
+		panel.setLayout(new GridLayout(row,col));
+		return panel;
+	}
 
 	public JTextField MakeField(String st,JPanel patronPanel){
 		JPanel obj  = new JPanel();
@@ -108,6 +103,16 @@ public class NewPatronView implements ActionListener {
 		obj.add(text);
 		patronPanel.add(obj);
 		return text;
+	}
+
+	public JButton MakeButtons(String st,JPanel buttonPanel){
+		JButton btn = new JButton(st);
+		JPanel btnPanel = new JPanel();
+		btnPanel.setLayout(new FlowLayout());
+		btn.addActionListener(this);
+		btnPanel.add(btn);
+		buttonPanel.add(btn);
+		return btn;
 	}
 
 	public void actionPerformed(ActionEvent e) {

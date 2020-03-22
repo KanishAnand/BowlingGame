@@ -21,7 +21,7 @@ import javax.swing.event.*;
 
 import java.util.*;
 
-public class ControlDeskView implements ActionListener, ControlDeskObserver {
+public class ControlDeskView implements ActionListener, ControlDeskObserver{
 
 	private JButton addParty, finished, assign;
 	private JFrame win;
