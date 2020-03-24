@@ -3,7 +3,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
-public class ViewComponents {
+abstract class ViewComponents {
     public JFrame MakeWindow(String st){
         JFrame win = new JFrame("Control Desk");
         win.getContentPane().setLayout(new BorderLayout());
