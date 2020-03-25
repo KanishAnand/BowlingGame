@@ -16,3 +16,5 @@ unnecessarily.
 11. In `PinSetterView.java` same code was repeated 10 times to setup all 10 pins and also to set up 4 rows , So I made a generalised function which setup rows as
 well as add 10 pins in them 
 12. if replaced by if....else if in `EndGamePrompt.java` for selection of yes/no button.
+13. In file `EndGamePrompt.java` I removed repeated code and also removed unused variables.
+14. In file `EndGameReport.java` also inheritence is made from Viecomponents to use functions and also if...else thing was done with buttons.

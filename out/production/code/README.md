@@ -13,4 +13,7 @@ do like there should have been some other file to calculate score instead of doi
 class methods are public and not static so that they can only be accessed by objects and not directly.
 10. In file `Bowler.java` I improved a conditional expression : if was used three times which could be easily replaced by else...if so that it is not checked 
 unnecessarily.
- 
+11. In `PinSetterView.java` same code was repeated 10 times to setup all 10 pins and also to set up 4 rows , So I made a generalised function which setup rows as
+well as add 10 pins in them 
+12. if replaced by if....else if in `EndGamePrompt.java` for selection of yes/no button.
+13. In file `EndGamePrompt.java` I removed repeated code and also removed unused variables.

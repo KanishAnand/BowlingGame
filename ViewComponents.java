@@ -36,6 +36,18 @@ abstract class ViewComponents {
         return panel;
     }
 
+    public JPanel GridLayoutPanel(int row,int col){
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(row,col));
+        return panel;
+    }
+
+    public JPanel FlowLayoutPanel(){
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+        return panel;
+    }
+
     public JTextField MakeField(String st,JPanel patronPanel){
         JPanel obj  = new JPanel();
         obj.setLayout((new FlowLayout()));
