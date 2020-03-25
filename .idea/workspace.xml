@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71306f6f-8a91-4300-9ce2-0c8d8dd73806" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndGamePrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EndGamePrompt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndGameReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EndGameReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/SCOREHISTORY.DAT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/ViewComponents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScoreReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/EndGameReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/EndGameReport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/SCOREHISTORY.DAT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/ScoreReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/ScoreReport.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +85,7 @@
       <workItem from="1585059838654" duration="13143000" />
       <workItem from="1585080779258" duration="645000" />
       <workItem from="1585114139867" duration="3163000" />
+      <workItem from="1585155541694" duration="5412000" />
     </task>
     <servers />
   </component>
@@ -88,26 +93,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="639" y="206" width="800" height="677" key="#Inspections" timestamp="1585160042640">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="639" y="206" width="800" height="677" key="#Inspections/0.30.1920.1050@0.30.1920.1050" timestamp="1585160042640" />
     <state x="618" y="418" width="673" height="271" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585071918941">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="618" y="418" width="673" height="271" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.30.1920.1050@0.30.1920.1050" timestamp="1585071918941" />
-    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585118930749">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585157684053">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585118930749" />
-    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1585118930747">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585157684053" />
+    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1585157684053">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585118930747" />
-    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1585118930746">
+    <state width="1874" height="277" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585157684053" />
+    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1585157684052">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585118930746" />
-    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1585118930748">
+    <state width="1874" height="277" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585157684052" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1585157684053">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585118930748" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585157684053" />
     <state x="608" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585114153660">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>

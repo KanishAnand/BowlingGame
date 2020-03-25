@@ -27,18 +27,14 @@ public class ScoreReport {
 		Iterator scoreIt = v.iterator();
 		
 		content = "";
-		content += "--Lucky Strike Bowling Alley Score Report--\n";
-		content += "\n";
-		content += "Report for " + full + ", aka \"" + nick + "\":\n";
-		content += "\n";
+		content += "--Lucky Strike Bowling Alley Score Report--\n\n";
+		content += "Report for " + full + ", aka \"" + nick + "\":\n\n";
 		content += "Final scores for this session: ";
 		content += scores[0];
 		for (int i = 1; i < games; i++){
 			content += ", " + scores[i];
 		}
-		content += ".\n";
-		content += "\n";
-		content += "\n";
+		content += ".\n\n\n";
 		content += "Previous scores by date: \n";
 		while (scoreIt.hasNext()){
 			Score score = (Score) scoreIt.next();
@@ -63,7 +59,7 @@ public class ScoreReport {
 			String boundary = "DataSeparatorString";
 
 			// here you are supposed to send your username
-			sendln(in, out, "HELO world");
+			sendln(in, out, "HELLO world");
 			sendln(in, out, "MAIL FROM: <mda2376@rit.edu>");
 			sendln(in, out, "RCPT TO: <" + recipient + ">");
 			sendln(in, out, "DATA");
@@ -103,9 +99,7 @@ public class ScoreReport {
 		try {
 			out.write(s + "\r\n");
 			out.flush();
-			// System.out.println(s);
-			s = in.readLine();
-			// System.out.println(s);
+			in.readLine();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

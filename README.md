@@ -18,3 +18,4 @@ well as add 10 pins in them
 12. if replaced by if....else if in `EndGamePrompt.java` for selection of yes/no button.
 13. In file `EndGamePrompt.java` I removed repeated code and also removed unused variables.
 14. In file `EndGameReport.java` also inheritence is made from Viecomponents to use functions and also if...else thing was done with buttons.
+15. Removed unused variables from `ScoreReport.java` and also merged code lines like to put `\n` 3 times three line of code was written which could be merged in 1 line.
