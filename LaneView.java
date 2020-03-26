@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class LaneView implements LaneObserver, ActionListener {
+public class LaneView extends ViewComponents implements LaneObserver, ActionListener {
 
 	private int roll;
 	private boolean initDone = true;
@@ -85,15 +85,13 @@ public class LaneView implements LaneObserver, ActionListener {
 
 		for (int i = 0; i != numBowlers; i++) {
 			for (int j = 0; j != 9; j++) {
-				ballGrid[i][j] = new JPanel();
-				ballGrid[i][j].setLayout(new GridLayout(0, 3));
+				ballGrid[i][j] = GridLayoutPanel(0,3);
 				ballGrid[i][j].add(new JLabel("  "), BorderLayout.EAST);
 				ballGrid[i][j].add(balls[i][2 * j], BorderLayout.EAST);
 				ballGrid[i][j].add(balls[i][2 * j + 1], BorderLayout.EAST);
 			}
 			int j = 9;
-			ballGrid[i][j] = new JPanel();
-			ballGrid[i][j].setLayout(new GridLayout(0, 3));
+			ballGrid[i][j] = GridLayoutPanel(0,3);
 			ballGrid[i][j].add(balls[i][2 * j]);
 			ballGrid[i][j].add(balls[i][2 * j + 1]);
 			ballGrid[i][j].add(balls[i][2 * j + 2]);
@@ -141,9 +139,7 @@ public class LaneView implements LaneObserver, ActionListener {
 				cpanel.add(makeFrame(le.getParty()), "Center");
 
 				// Button Panel
-				JPanel buttonPanel = new JPanel();
-				buttonPanel.setLayout(new FlowLayout());
-
+				JPanel buttonPanel = FlowLayoutPanel();
 				Insets buttonMargin = new Insets(4, 4, 4, 4);
 
 				maintenance = new JButton("Maintenance Call");

@@ -73,8 +73,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 		}
 
 		// Party Queue Panel
-		JPanel partyPanel = new JPanel();
-		partyPanel.setLayout(new FlowLayout());
+		JPanel partyPanel = FlowLayoutPanel();
 		partyPanel.setBorder(new TitledBorder("Party Queue"));
 
 		Vector empty = new Vector();
@@ -146,7 +145,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 	 * @param ce	the ControlDeskEvent that triggered the handler
 	 *
 	 */
-
+	
 	public void receiveControlDeskEvent(ControlDeskEvent ce) {
 		partyList.setListData(((Vector) ce.getPartyQueue()));
 	}

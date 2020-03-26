@@ -43,7 +43,7 @@
 import java.util.*;
 import java.io.*;
 
-class ControlDesk extends Thread {
+class ControlDesk extends Thread implements ControlDeskInterface{
 
 	/** The collection of Lanes */
 	private HashSet lanes;
@@ -104,7 +104,7 @@ class ControlDesk extends Thread {
      *
      */
 
-	private Bowler registerPatron(String nickName) {
+	public Bowler registerPatron(String nickName) {
 		Bowler patron = null;
 
 		try {
