@@ -52,7 +52,6 @@ public class EndGamePrompt extends ViewComponents implements ActionListener {
 
 		// Center Window on Screen
 		SetWindowPosition(win);
-		win.show();
 
 	}
 
@@ -78,7 +77,7 @@ public class EndGamePrompt extends ViewComponents implements ActionListener {
 	}
 	
 	public void distroy() {
-		win.hide();
+		win.setVisible(false);
 	}
 	
 }

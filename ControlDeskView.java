@@ -104,8 +104,6 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 
 		// Center Window on Screen
 		SetWindowPosition(win);
-		win.show();
-
 	}
 
 	/**
@@ -123,7 +121,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 			controlDesk.assignLane();
 		}
 		if (e.getSource().equals(finished)) {
-			win.hide();
+			win.setVisible(false);
 			System.exit(0);
 		}
 	}

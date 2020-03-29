@@ -71,7 +71,6 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 
 		// Center Window on Screen
 		SetWindowPosition(win);
-		win.show();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -80,7 +79,7 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 			retVal.add(selectedMember);
 		}
 		else if (e.getSource().equals(finished)) {
-			win.hide();
+			win.setVisible(false);
 			result = 1;
 		}
 
@@ -103,7 +102,7 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 	}
 	
 	public void destroy() {
-		win.hide();
+		win.setVisible(false);
 	}
 
 	public static void main( String args[] ) {

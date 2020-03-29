@@ -60,7 +60,7 @@ class ControlDesk extends Thread implements ControlDeskInterface{
     /**
      * Constructor for the ControlDesk class
      *
-     * @param numlanes	the numbler of lanes to be represented
+     * @param numlanes	the number of lanes to be represented
      *
      */
 

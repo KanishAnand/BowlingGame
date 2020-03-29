@@ -19,4 +19,7 @@ well as add 10 pins in them
 13. In file `EndGamePrompt.java` I removed repeated code and also removed unused variables.
 14. In file `EndGameReport.java` also inheritence is made from Viecomponents to use functions and also if...else thing was done with buttons.
 15. Removed unused variables from `ScoreReport.java` and also merged code lines like to put `\n` 3 times three line of code was written which could be merged in 1 line.
-16. All code was already within classes so `Encapsulation` was followe.
+16. All code was already within classes so `Encapsulation` was followed.
+17. Inherited `LaneStatusView` from `ViewComponents` and also corrected unecessary if conditions from file .
+18. Deprecated method of win.hide and win.show was used I replaced it by setVisible(true/false)
+  

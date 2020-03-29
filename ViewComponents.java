@@ -16,6 +16,7 @@ abstract class ViewComponents {
         win.setLocation(
                 ((screenSize.width) / 2) - ((win.getSize().width) / 2),
                 ((screenSize.height) / 2) - ((win.getSize().height) / 2));
+        win.setVisible(true);
     }
 
     public void AddContentsToWindow(JFrame win,JPanel colPanel){
@@ -65,7 +66,7 @@ abstract class ViewComponents {
         btnPanel.setLayout(new FlowLayout());
         btn.addActionListener((ActionListener) this);
         btnPanel.add(btn);
-        buttonPanel.add(btn);
+        buttonPanel.add(btnPanel);
         return btn;
     }
 }

@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71306f6f-8a91-4300-9ce2-0c8d8dd73806" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ControlDeskInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AddPartyViewInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AddPartyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/AddPartyView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControlDesk.java" beforeDir="false" afterPath="$PROJECT_DIR$/ControlDesk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControlDeskView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ControlDeskView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndGamePrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EndGamePrompt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndGameReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EndGameReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaneStatusView.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneStatusView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LaneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PinsetterObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/PinsetterObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewPatronView.java" beforeDir="false" afterPath="$PROJECT_DIR$/NewPatronView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PinSetterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PinSetterView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/SCOREHISTORY.DAT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ViewComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/ViewComponents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/LaneStatusView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/LaneStatusView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/SCOREHISTORY.DAT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/code/ViewComponents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/code/ViewComponents.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +64,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunManager">
     <configuration name="drive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -84,7 +97,9 @@
       <workItem from="1585080779258" duration="645000" />
       <workItem from="1585114139867" duration="3163000" />
       <workItem from="1585155541694" duration="5412000" />
-      <workItem from="1585201759592" duration="4009000" />
+      <workItem from="1585201759592" duration="5550000" />
+      <workItem from="1585473163312" duration="1141000" />
+      <workItem from="1585489754905" duration="4072000" />
     </task>
     <servers />
   </component>
@@ -96,26 +111,34 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="639" y="206" width="800" height="677" key="#Inspections/0.30.1920.1050@0.30.1920.1050" timestamp="1585207982870" />
-    <state x="618" y="418" width="673" height="271" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585071918941">
+    <state x="704" y="439" width="511" height="241" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585493418403">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="618" y="418" width="673" height="271" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.30.1920.1050@0.30.1920.1050" timestamp="1585071918941" />
-    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585211655787">
+    <state x="704" y="439" width="511" height="241" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.30.1920.1050@0.30.1920.1050" timestamp="1585493418403" />
+    <state x="618" y="418" width="673" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585493337199">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585211655787" />
-    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1585211655786">
+    <state x="618" y="418" width="673" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.30.1920.1050@0.30.1920.1050" timestamp="1585493337199" />
+    <state x="725" y="297" width="459" height="514" key="FileChooserDialogImpl" timestamp="1585473511337">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585211655786" />
-    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1585211655786">
+    <state x="725" y="297" width="459" height="514" key="FileChooserDialogImpl/0.30.1920.1050@0.30.1920.1050" timestamp="1585473511337" />
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585492326294">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585211655786" />
-    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1585211655787">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585492326294" />
+    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1585492326292">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585211655787" />
+    <state width="1874" height="277" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585492326292" />
+    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1585492326292">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1874" height="277" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585492326292" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1585492326293">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1874" height="277" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585492326293" />
     <state x="608" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585114153660">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
