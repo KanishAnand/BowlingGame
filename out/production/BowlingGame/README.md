@@ -29,3 +29,7 @@ well as add 10 pins in them
 23. Replaced for loop with enhanced for loop write advantages in report : https://stackoverflow.com/questions/3328672/what-are-the-advantages-of-enhanced-for-loop-and-iterator-in-java
 24. Removed redundant casting to various fields advantages : Unnecessary casting expressions make the code harder to read and understand.
 25. Used `final` keyword wherever  it was possible : https://stackoverflow.com/questions/137868/using-the-final-modifier-whenever-applicable-in-java
+26. Replaced manual array copy in file `PinsetterEvent` with copy function so as to prevent from bugs.
+27. Remove unnecessary creation of temporary objects when converting from primitive types to Strings.         
+    For example:    new Integer(3).toString()  will be reported, and can be automatically converted to:  Integer.toString(3
+ 28.
