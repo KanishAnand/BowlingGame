@@ -27,16 +27,16 @@ import java.util.HashMap;
 
 public class LaneEvent implements  LaneEventInterface{
 
-	private Party p;
+	private final Party p;
 	int frame;
-	int ball;
-	Bowler bowler;
-	int[][] cumulScore;
-	HashMap score;
-	int index;
-	int frameNum;
-	int[] curScores;
-	boolean mechProb;
+	final int ball;
+	final Bowler bowler;
+	final int[][] cumulScore;
+	final HashMap score;
+	final int index;
+	final int frameNum;
+	final int[] curScores;
+	final boolean mechProb;
 	
 	public LaneEvent( Party pty, int theIndex, Bowler theBowler, int[][] theCumulScore, HashMap theScore, int theFrameNum, int[] theCurScores, int theBall, boolean mechProblem) {
 		p = pty;

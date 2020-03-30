@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class CalculateScore {
-    public HashMap scores;
+    public final HashMap scores;
 
     public CalculateScore(){
         scores = new HashMap();

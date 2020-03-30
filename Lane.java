@@ -138,11 +138,11 @@ import java.util.Date;
 
 public class Lane extends Thread implements PinsetterObserver {	
 	private Party party;
-	private Pinsetter setter;
-	private HashMap scores;
-	private Vector subscribers;
+	private final Pinsetter setter;
+	private final HashMap scores;
+	private final Vector subscribers;
 
-	private CalculateScore calculateScore;
+	private final CalculateScore calculateScore;
 	
 	private boolean gameIsHalted;
 

@@ -13,8 +13,8 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 	private int roll;
 	private boolean initDone = true;
 
-	JFrame frame;
-	Container cpanel;
+	final JFrame frame;
+	final Container cpanel;
 	Vector bowlers;
 	int cur;
 	Iterator bowlIt;
@@ -27,7 +27,7 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 	JPanel[] pins;
 
 	JButton maintenance;
-	Lane lane;
+	final Lane lane;
 
 	public LaneView(Lane lane, int laneNum) {
 

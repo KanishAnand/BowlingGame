@@ -2,38 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73ed191c-5440-4bba-ba6e-6ad50ce9dfea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BowlingGame.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AddPartyView.java" beforeDir="false" afterPath="$PROJECT_DIR$/AddPartyView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AddPartyViewInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/AddPartyViewInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculateScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/CalculateScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControlDesk.java" beforeDir="false" afterPath="$PROJECT_DIR$/ControlDesk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControlDeskInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/ControlDeskInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControlDeskObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/ControlDeskObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControlDeskView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ControlDeskView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndGamePrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/EndGamePrompt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EndGameReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/EndGameReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lane.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaneEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaneEventInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneEventInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaneObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaneServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaneStatusView.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneStatusView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LaneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewPatronView.java" beforeDir="false" afterPath="$PROJECT_DIR$/NewPatronView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PinSetterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PinSetterView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pinsetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pinsetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PinsetterEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/PinsetterEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PinsetterObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/PinsetterObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrintableText.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrintableText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/SCOREHISTORY.DAT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScoreReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/drive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BowlingGame/AddPartyView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BowlingGame/AddPartyView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BowlingGame/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BowlingGame/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BowlingGame/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BowlingGame/SCOREHISTORY.DAT" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585555614149</updated>
-      <workItem from="1585555620071" duration="2218000" />
+      <workItem from="1585555620071" duration="2731000" />
     </task>
     <servers />
   </component>
@@ -92,25 +66,25 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="555" y="215" width="800" height="677" key="#Inspections/0.30.1920.1050@0.30.1920.1050" timestamp="1585556056229" />
-    <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585558009256">
+    <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585558472802">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.30.1920.1050@0.30.1920.1050" timestamp="1585558009256" />
-    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585558011940">
+    <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.30.1920.1050@0.30.1920.1050" timestamp="1585558472802" />
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585558517401">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585558011940" />
-    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1585558011939">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585558517401" />
+    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1585558517400">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585558011939" />
-    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1585558011939">
+    <state width="1874" height="277" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585558517400" />
+    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1585558517399">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585558011939" />
-    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1585558011939">
+    <state width="1874" height="277" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585558517399" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1585558517401">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585558011939" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585558517401" />
   </component>
 </project>
