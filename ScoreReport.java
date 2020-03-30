@@ -22,7 +22,8 @@ public class ScoreReport {
 		try{
 			v = ScoreHistoryFile.getScores(nick);
 		} catch (Exception e){System.err.println("Error: " + e);}
-		
+
+		assert v != null;
 		Iterator scoreIt = v.iterator();
 		
 		content = "";

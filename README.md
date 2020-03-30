@@ -35,3 +35,18 @@ well as add 10 pins in them
 28.Replaced redundant class fields that can be replaced with local variables. If all local usages of a field are preceded by assignments to that field, the field can be removed 
     and its usages replaced with local variables.
 29. There were many empty catch statements in which nothing was printed I corrected them.
+30. Vector's object was iterated without  asserting that it was not null. It could cause error if vector would be null. So I added an assert statement.(`ScoreReport` file))
+`assert v != null;
+ Iterator scoreIt = v.iterator();`
+31. Deleted empty if or else statements.
+32. Replaced `catch (FileNotFoundException e) {
+              			System.err.println("Error..." + e);
+              		} catch (IOException e) {
+              			System.err.println("Error..." + e);
+              		}` with ` catch (IOException e) {
+                             			System.err.println("Error..." + e);
+                             		}`
+33.
+ 
+ 		
+

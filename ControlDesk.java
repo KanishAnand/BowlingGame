@@ -114,8 +114,6 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 
 			patron = BowlerFile.getBowlerInfo(nickName);
 
-		} catch (FileNotFoundException e) {
-			System.err.println("Error..." + e);
 		} catch (IOException e) {
 			System.err.println("Error..." + e);
 		}

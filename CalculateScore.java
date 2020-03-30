@@ -43,7 +43,7 @@ public class CalculateScore {
      */
     public int getScore(Bowler Cur, int frame, int[][] cumulScores,int bowlIndex,int ball) {
         int[] curScore;
-        int strikeballs = 0;
+        int strikeballs;
         int totalScore = 0;
         curScore = (int[]) scores.get(Cur);
         for (int i = 0; i != 10; i++){
@@ -58,9 +58,7 @@ public class CalculateScore {
                 //Also, we're not on the current ball.
                 //Add the next ball to the ith one in cumul.
                 cumulScores[bowlIndex][(i/2)] += curScore[i+1] + curScore[i];
-                if (i > 1) {
-                    //cumulScores[bowlIndex][i/2] += cumulScores[bowlIndex][i/2 -1];
-                }
+                //cumulScores[bowlIndex][i/2] += cumulScores[bowlIndex][i/2 -1];
             } else if( i < current && i%2 == 0 && curScore[i] == 10  && i < 18){
                 strikeballs = 0;
                 //This ball is the first ball, and was a strike.

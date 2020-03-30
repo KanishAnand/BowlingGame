@@ -237,13 +237,12 @@ public class Lane extends Thread implements PinsetterObserver {
 						gameNumber++;
 					}
 				}
-			} else if (partyAssigned && gameFinished) {
+			} else if (partyAssigned) {
 				EndGamePrompt egp = new EndGamePrompt( ((Bowler) party.getMembers().get(0)).getNickName() + "'s Party" );
 				int result = egp.getResult();
 				egp.distroy();
-				egp = null;
-				
-				
+
+
 				System.out.println("result was: " + result);
 				
 				// TODO: send record of scores to control desk
@@ -333,8 +332,8 @@ public class Lane extends Thread implements PinsetterObserver {
 					} else if (pe.getThrowNumber() == 3)  
 						System.out.println("I'm here...");
 				}
-			} else {								//  this is not a real throw, probably a reset
-			}
+			}  //  this is not a real throw, probably a reset
+
 	}
 	
 	/** resetBowlerIterator()
