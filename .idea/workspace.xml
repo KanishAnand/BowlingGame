@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/SCOREHISTORY.DAT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ScoreReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BowlingGame/CalculateScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BowlingGame/CalculateScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BowlingGame/ControlDesk.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BowlingGame/ControlDesk.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BowlingGame/Lane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BowlingGame/Lane.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BowlingGame/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BowlingGame/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BowlingGame/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BowlingGame/SCOREHISTORY.DAT" afterDir="false" />
@@ -60,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585555614149</updated>
-      <workItem from="1585555620071" duration="5614000" />
+      <workItem from="1585555620071" duration="6225000" />
     </task>
     <servers />
   </component>
@@ -76,21 +77,21 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.30.1920.1050@0.30.1920.1050" timestamp="1585561710280" />
-    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585561824352">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585566132942">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585561824352" />
-    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1585561824351">
+    <state width="1874" height="277" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585566132942" />
+    <state width="1874" height="277" key="GridCell.Tab.0.center" timestamp="1585566132942">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585561824351" />
-    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1585561824350">
+    <state width="1874" height="277" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585566132942" />
+    <state width="1874" height="277" key="GridCell.Tab.0.left" timestamp="1585566132942">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585561824350" />
-    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1585561824351">
+    <state width="1874" height="277" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585566132942" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right" timestamp="1585566132942">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state width="1874" height="277" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585561824351" />
+    <state width="1874" height="277" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585566132942" />
   </component>
 </project>
