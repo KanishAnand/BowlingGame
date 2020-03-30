@@ -32,4 +32,6 @@ well as add 10 pins in them
 26. Replaced manual array copy in file `PinsetterEvent` with copy function so as to prevent from bugs.
 27. Remove unnecessary creation of temporary objects when converting from primitive types to Strings.         
     For example:    new Integer(3).toString()  will be reported, and can be automatically converted to:  Integer.toString(3
- 28.
+28.Replaced redundant class fields that can be replaced with local variables. If all local usages of a field are preceded by assignments to that field, the field can be removed 
+    and its usages replaced with local variables.
+29. There were many empty catch statements in which nothing was printed I corrected them.

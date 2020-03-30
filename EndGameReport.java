@@ -19,7 +19,6 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 	private final JFrame win;
 	private final JButton printButton;
 	private final JButton finished;
-	private final JList memberList;
 	private Vector myVector;
 	private final Vector retVal;
 
@@ -45,14 +44,14 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 			myVector.add(((Bowler) o).getNick());
 		}
 
-		memberList = new JList(myVector);
+		JList memberList = new JList(myVector);
 		memberList.setFixedCellWidth(120);
 		memberList.setVisibleRowCount(5);
 		memberList.addListSelectionListener(this);
 		JScrollPane partyPane = new JScrollPane(memberList);
 		//        partyPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		partyPanel.add(partyPane);
-		partyPanel.add( memberList );
+		partyPanel.add(memberList);
 
 		// Button Panel
 		JPanel buttonPanel = GridLayoutPanel(2,1);

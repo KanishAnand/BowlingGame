@@ -283,7 +283,9 @@ public class Lane extends Thread implements PinsetterObserver {
 			
 			try {
 				sleep(10);
-			} catch (Exception e) {}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

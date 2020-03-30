@@ -90,7 +90,9 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 			
 			try {
 				sleep(250);
-			} catch (Exception e) {}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 		
@@ -140,14 +142,7 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 		publish(new ControlDeskEvent(getPartyQueue()));
 	}
 
-    /**
-     */
-
-	public void viewScores(Lane ln) {
-		// TODO: attach a LaneScoreView object to that lane
-	}
-
-    /**
+	/**
      * Creates a party from a Vector of nickNAmes and adds them to the wait queue.
      *
      * @param partyNicks	A Vector of NickNames

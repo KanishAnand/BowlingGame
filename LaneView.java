@@ -128,6 +128,7 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 				try {
 					Thread.sleep(1);
 				} catch (Exception e) {
+					e.printStackTrace();
 				}
 			}
 
