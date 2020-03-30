@@ -9,8 +9,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
 
 public class LaneStatusView extends ViewComponents implements ActionListener, LaneObserver, PinsetterObserver {
 
@@ -117,7 +115,7 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 	}
 
 	public void receiveLaneEvent(LaneEvent le) {
-		curBowler.setText( ( (Bowler)le.getBowler()).getNickName() );
+		curBowler.setText( le.getBowler().getNickName() );
 		if ( le.isMechanicalProblem() ) {
 			maintenance.setBackground( Color.RED );
 		}

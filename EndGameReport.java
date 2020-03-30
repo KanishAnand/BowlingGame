@@ -8,13 +8,11 @@
 
 import java.awt.*;
 import java.awt.event.*;
-import javax.print.attribute.standard.PrinterMakeAndModel;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;
 
 import java.util.*;
-import java.text.*;
 
 public class EndGameReport extends ViewComponents implements ActionListener, ListSelectionListener {
 
@@ -42,9 +40,8 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 		partyPanel.setBorder(new TitledBorder("Party Members"));
 		
 		Vector myVector = new Vector();
-		Iterator iter = (party.getMembers()).iterator();
-		while (iter.hasNext()){
-			myVector.add( ((Bowler)iter.next()).getNick() );
+		for (Object o : party.getMembers()) {
+			myVector.add(((Bowler) o).getNick());
 		}
 
 		memberList = new JList(myVector);
@@ -105,7 +102,7 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 		win.setVisible(false);
 	}
 
-	public static void main( String args[] ) {
+	public static void main(String[] args) {
 		Vector bowlers = new Vector();
 		for ( int i=0; i<4; i++ ) {
 			bowlers.add( new Bowler( "aaaaa", "aaaaa", "aaaaa" ) );

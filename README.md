@@ -22,4 +22,9 @@ well as add 10 pins in them
 16. All code was already within classes so `Encapsulation` was followed.
 17. Inherited `LaneStatusView` from `ViewComponents` and also corrected unecessary if conditions from file .
 18. Deprecated method of win.hide and win.show was used I replaced it by setVisible(true/false)
-  
+19. Replaced C type array declaration in various files with java type array declaration for good coding styles(write its uses from net).
+20. Remove unnecessary public modifier in interfaces : https://stackoverflow.com/questions/17011374/are-public-and-public-final-redundant-for-interface-fields
+21. Removed unnecessary imports.
+22. `LaneEventInterface` was not linked with any files it was useless , So I linked it with `LaneEvent` file.
+23. Replaced for loop with enhanced for loop write advantages in report : https://stackoverflow.com/questions/3328672/what-are-the-advantages-of-enhanced-for-loop-and-iterator-in-java
+24. Removed redundant casting to various fields advantages : Unnecessary casting expressions make the code harder to read and understand.

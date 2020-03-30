@@ -16,14 +16,13 @@ public class CalculateScore {
      * @post scoring system is initialized
      */
     public void resetScores(Party party) {
-        Iterator bowlIt = (party.getMembers()).iterator();
 
-        while ( bowlIt.hasNext() ) {
+        for (Object o : party.getMembers()) {
             int[] toPut = new int[25];
-            for ( int i = 0; i != 25; i++){
+            for (int i = 0; i != 25; i++) {
                 toPut[i] = -1;
             }
-            scores.put( bowlIt.next(), toPut );
+            scores.put(o, toPut);
         }
 
 //        gameFinished = false;
