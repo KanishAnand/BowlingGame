@@ -22,7 +22,7 @@
  *
  */
 
-public class Bowler {
+public class Bowler implements BowlerInterface {
 
     private final String fullName;
     private final String nickName;

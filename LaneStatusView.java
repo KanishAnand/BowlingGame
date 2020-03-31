@@ -88,22 +88,22 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 	public void actionPerformed( ActionEvent e ) {
 		if (lane.isPartyAssigned()) {
 			if (e.getSource().equals(viewPinSetter)) {
-				if (!psShowing) {
-					psv.show();
-					psShowing = true;
-				} else {
+				if (psShowing) {
 					psv.hide();
 					psShowing = false;
+				} else {
+					psv.show();
+					psShowing = true;
 				}
 			}
 
 			if (e.getSource().equals(viewLane)) {
-				if (!laneShowing) {
-					lv.show();
-					laneShowing = true;
-				} else {
+				if (laneShowing) {
 					lv.hide();
 					laneShowing = false;
+				} else {
+					lv.show();
+					laneShowing = true;
 				}
 			}
 		}
@@ -121,12 +121,12 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 		if ( le.isMechanicalProblem() ) {
 			maintenance.setBackground( Color.RED );
 		}
-		if (!lane.isPartyAssigned()) {
-			viewLane.setEnabled( false );
-			viewPinSetter.setEnabled( false );
+		if (lane.isPartyAssigned()) {
+			viewLane.setEnabled(true);
+			viewPinSetter.setEnabled(true);
 		} else {
-			viewLane.setEnabled( true );
-			viewPinSetter.setEnabled( true );
+			viewLane.setEnabled(false);
+			viewPinSetter.setEnabled(false);
 		}
 	}
 

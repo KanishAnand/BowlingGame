@@ -54,7 +54,9 @@ well as add 10 pins in them
      }`
    may be expressed as:
     ` bar = foo == null ? null : foo.get();`
-34. 
+34. Inverted negated if statements which increases clarity.
+35. At many places while throwing exception IOException, FileNotFoundException both  were written but second is already included in IOException so replaced it.
+ 
  
  		
 

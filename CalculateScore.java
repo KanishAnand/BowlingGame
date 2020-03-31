@@ -41,7 +41,8 @@ public class CalculateScore {
      * @param cumulScores
      * @return			The bowlers total score
      */
-    public int getScore(Bowler Cur, int frame, int[][] cumulScores,int bowlIndex,int ball) {
+    @SuppressWarnings("BreakStatement")
+    public int getScore(Bowler Cur, int frame, int[][] cumulScores, int bowlIndex, int ball) {
         int[] curScore;
         int strikeballs;
         int totalScore = 0;
@@ -77,26 +78,26 @@ public class CalculateScore {
                     //Add up the strike.
                     //Add the next two balls to the current cumulscore.
                     cumulScores[bowlIndex][i/2] += 10;
-                    if(curScore[i+1] != -1) {
-                        cumulScores[bowlIndex][i/2] += curScore[i+1] + cumulScores[bowlIndex][(i/2)-1];
-                        if (curScore[i+2] != -1){
-                            if( curScore[i+2] != -2){
-                                cumulScores[bowlIndex][(i/2)] += curScore[i+2];
-                            }
-                        } else {
-                            if( curScore[i+3] != -2){
-                                cumulScores[bowlIndex][(i/2)] += curScore[i+3];
-                            }
-                        }
-                    } else {
+                    if (curScore[i + 1] == -1) {
 
                         cumulScores[bowlIndex][i / 2] += i / 2 > 0 ? curScore[i + 2] + cumulScores[bowlIndex][(i / 2) - 1] : curScore[i + 2];
-                        if (curScore[i+3] != -1){
-                            if( curScore[i+3] != -2){
-                                cumulScores[bowlIndex][(i/2)] += curScore[i+3];
+                        if (curScore[i + 3] != -1) {
+                            if (curScore[i + 3] != -2) {
+                                cumulScores[bowlIndex][(i / 2)] += curScore[i + 3];
                             }
                         } else {
-                            cumulScores[bowlIndex][(i/2)] += curScore[i+4];
+                            cumulScores[bowlIndex][(i / 2)] += curScore[i + 4];
+                        }
+                    } else {
+                        cumulScores[bowlIndex][i / 2] += curScore[i + 1] + cumulScores[bowlIndex][(i / 2) - 1];
+                        if (curScore[i + 2] != -1) {
+                            if (curScore[i + 2] != -2) {
+                                cumulScores[bowlIndex][(i / 2)] += curScore[i + 2];
+                            }
+                        } else {
+                            if (curScore[i + 3] != -2) {
+                                cumulScores[bowlIndex][(i / 2)] += curScore[i + 3];
+                            }
                         }
                     }
                 } else {
@@ -112,7 +113,7 @@ public class CalculateScore {
                         }
                     } else if (i/2 != 9){
                         //add his last frame's cumul to this ball, make it this frame's cumul.
-                        cumulScores[bowlIndex][i / 2] += curScore[i] != -2 ? cumulScores[bowlIndex][i / 2 - 1] + curScore[i] : cumulScores[bowlIndex][i / 2 - 1];
+                        cumulScores[bowlIndex][i / 2] += curScore[i] == -2 ? cumulScores[bowlIndex][i / 2 - 1] : cumulScores[bowlIndex][i / 2 - 1] + curScore[i];
                     }
                 } else if (i < 18){
                     if(curScore[i] != -1 && i > 2){
