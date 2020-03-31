@@ -144,7 +144,7 @@ public class PinSetterView implements PinsetterObserver {
 
     public void receivePinsetterEvent(PinsetterEvent pe){
 	if ( !(pe.isFoulCommited()) ) {
-	    	JLabel tempPin = new JLabel ( );
+	    	JLabel tempPin;
 	    	for ( int c = 0; c < 10; c++ ) {
 				boolean pin = pe.pinKnockedDown ( c );
 				tempPin = (JLabel)pinVect.get ( c );

@@ -57,7 +57,12 @@ well as add 10 pins in them
 34. Inverted negated if statements which increases clarity.
 35. At many places while throwing exception IOException, FileNotFoundException both  were written but second is already included in IOException so replaced it.
 36. Removed cyclic dependency in interface made (write its advantages).
-
+37. In order to improve performance I replaced string concatenation using '+' in loops by function append.
+For that I replaced string by String builder. This has better performance because with + it always copies full string.
+38. Reports any attempt to instantiate a new Long, Integer, Short or Byte object from a primitive long, integer, short or byte argument. It may be more efficient to use the static method valueOf() here (introduced in Java 5), which will cache objects for values between -128 and 127 inclusive.
+Replaced `(new Integer(((int[]) le.getScore()` with `(Integer.valueOf(((int[]) le.getScore()
+39. The variable was initialized a value but there was no need as it was assigned afterwards.
+` 
  
  
  		

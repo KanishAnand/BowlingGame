@@ -5,7 +5,6 @@ public interface ControlDeskInterface {
     void run();
     void assignLane();
     Bowler registerPatron(String nickName);
-
     void addPartyQueue(Vector partyNicks);
     Vector getPartyQueue();
     int getNumLanes();

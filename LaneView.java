@@ -11,7 +11,7 @@ import java.util.*;
 public class LaneView extends ViewComponents implements LaneObserver, ActionListener {
 
 	private int roll;
-	private boolean initDone = true;
+	private boolean initDone;
 
 	final JFrame frame;
 	final Container cpanel;
@@ -162,7 +162,7 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 				for (int i = 0; i <= le.getFrameNum() - 1; i++) {
 					if (lescores[k][i] != 0)
 						scoreLabel[k][i].setText(
-							(new Integer(lescores[k][i])).toString());
+							(Integer.valueOf(lescores[k][i])).toString());
 				}
 				for (int i = 0; i < 21; i++) {
 					if (((int[]) le.getScore()
@@ -188,8 +188,8 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 							ballLabel[k][i].setText("F");
 						} else
 							ballLabel[k][i].setText(
-								(new Integer(((int[]) le.getScore()
-									.get(bowlers.get(k)))[i]))
+								(Integer.valueOf(((int[]) le.getScore()
+										.get(bowlers.get(k)))[i]))
 									.toString());
 				}
 			}

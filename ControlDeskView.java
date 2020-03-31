@@ -68,7 +68,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 			curLane.subscribe(laneStat);
 			curLane.getPinsetter().subscribe(laneStat);
 			JPanel lanePanel = laneStat.showLane();
-			lanePanel.setBorder(new TitledBorder("Lane" + ++laneCount ));
+			lanePanel.setBorder(new TitledBorder("Lane " + ++laneCount ));
 			laneStatusPanel.add(lanePanel);
 		}
 
@@ -84,7 +84,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 		partyList.setVisibleRowCount(10);
 		JScrollPane partyPane = new JScrollPane(partyList);
 		partyPane.setVerticalScrollBarPolicy(
-			JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+				ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		partyPanel.add(partyPane);
 		//		partyPanel.add(partyList);
 
