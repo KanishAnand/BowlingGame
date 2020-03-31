@@ -66,10 +66,8 @@ public class NewPatronView extends ViewComponents implements ActionListener {
 		colPanel.add(buttonPanel, "East");
 
 		AddContentsToWindow(win,colPanel);
-
 		// Center Window on Screen
 		SetWindowPosition(win);
-		win.setVisible(true);
 
 	}
 

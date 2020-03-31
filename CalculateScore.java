@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Iterator;
 
 public class CalculateScore {
     public final HashMap scores;

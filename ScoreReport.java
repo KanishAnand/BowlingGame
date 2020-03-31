@@ -13,7 +13,7 @@ import java.awt.print.*;
 
 public class ScoreReport {
 
-	private String content;
+	private StringBuilder content;
 	
 	public ScoreReport( Bowler bowler, int[] scores, int games ) {
 		String nick = bowler.getNick();
@@ -26,23 +26,26 @@ public class ScoreReport {
 		assert v != null;
 		Iterator scoreIt = v.iterator();
 		
-		content = "";
-		content += "--Lucky Strike Bowling Alley Score Report--\n\n";
-		content += "Report for " + full + ", aka \"" + nick + "\":\n\n";
-		content += "Final scores for this session: ";
-		content += scores[0];
+		content = new StringBuilder("--Lucky Strike Bowling Alley Score Report--\n\n");
+		content.append("Report for ").append(full).append(", aka \"").append(nick).append("\":\n\n");
+		content.append("Final scores for this session: ");
+		content.append(scores[0]);
+
 		for (int i = 1; i < games; i++){
-			content += ", " + scores[i];
+			content.append(", ").append(scores[i]);
 		}
-		content += ".\n\n\n";
-		content += "Previous scores by date: \n";
+
+		content.append(".\n\n\n");
+		content.append("Previous scores by date: \n");
+
 		while (scoreIt.hasNext()){
 			Score score = (Score) scoreIt.next();
-			content += "  " + score.getDate() + " - " +  score.getScore();
-			content += "\n";
+			content.append("  ").append(score.getDate()).append(" - ").append(score.getScore());
+			content.append("\n");
 		}
-		content += "\n\n";
-		content += "Thank you for your continuing patronage.";
+
+		content.append("\n\n");
+		content.append("Thank you for your continuing patronage.");
 
 	}
 
@@ -81,7 +84,7 @@ public class ScoreReport {
 	public void sendPrintout() {
 		PrinterJob job = PrinterJob.getPrinterJob();
 
-		PrintableText printobj = new PrintableText(content);
+		PrintableText printobj = new PrintableText(content.toString());
 
 		job.setPrintable(printobj);
 

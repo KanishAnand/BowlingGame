@@ -200,7 +200,9 @@ public class Lane extends Thread implements PinsetterObserver {
 				while (gameIsHalted) {
 					try {
 						sleep(10);
-					} catch (Exception e) {}
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 

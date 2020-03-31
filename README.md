@@ -56,6 +56,10 @@ well as add 10 pins in them
     ` bar = foo == null ? null : foo.get();`
 34. Inverted negated if statements which increases clarity.
 35. At many places while throwing exception IOException, FileNotFoundException both  were written but second is already included in IOException so replaced it.
+36. Removed cyclic dependency in interface made (write its advantages).
+37. In order to improve performance I replaced string concatenation using '+' in loops by function append.
+For that I replaced string by String builder. This has better performance because with + it always copies full string.
+
  
  
  		

@@ -4,5 +4,4 @@ public interface BowlerInterface {
     String getFullName ();
     String getNick ();
     String getEmail ();
-    boolean equals ( Bowler b);
 }
