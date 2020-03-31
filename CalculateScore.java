@@ -89,11 +89,8 @@ public class CalculateScore {
                             }
                         }
                     } else {
-                        if ( i/2 > 0 ){
-                            cumulScores[bowlIndex][i/2] += curScore[i+2] + cumulScores[bowlIndex][(i/2)-1];
-                        } else {
-                            cumulScores[bowlIndex][i/2] += curScore[i+2];
-                        }
+
+                        cumulScores[bowlIndex][i / 2] += i / 2 > 0 ? curScore[i + 2] + cumulScores[bowlIndex][(i / 2) - 1] : curScore[i + 2];
                         if (curScore[i+3] != -1){
                             if( curScore[i+3] != -2){
                                 cumulScores[bowlIndex][(i/2)] += curScore[i+3];
@@ -115,11 +112,7 @@ public class CalculateScore {
                         }
                     } else if (i/2 != 9){
                         //add his last frame's cumul to this ball, make it this frame's cumul.
-                        if(curScore[i] != -2){
-                            cumulScores[bowlIndex][i/2] += cumulScores[bowlIndex][i/2 - 1] + curScore[i];
-                        } else {
-                            cumulScores[bowlIndex][i/2] += cumulScores[bowlIndex][i/2 - 1];
-                        }
+                        cumulScores[bowlIndex][i / 2] += curScore[i] != -2 ? cumulScores[bowlIndex][i / 2 - 1] + curScore[i] : cumulScores[bowlIndex][i / 2 - 1];
                     }
                 } else if (i < 18){
                     if(curScore[i] != -1 && i > 2){
