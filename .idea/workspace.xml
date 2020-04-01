@@ -6,12 +6,218 @@
   <component name="ChangeListManager">
     <list default="true" id="73ed191c-5440-4bba-ba6e-6ad50ce9dfea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControlDeskInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/ControlDeskInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControlDeskView.java" beforeDir="false" afterPath="$PROJECT_DIR$/ControlDeskView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lane.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LaneEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LaneView.java" beforeDir="false" afterPath="$PROJECT_DIR$/LaneView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PinSetterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/PinSetterView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCOREHISTORY.DAT" beforeDir="false" afterPath="$PROJECT_DIR$/SCOREHISTORY.DAT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/BowlingGame.mdl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/graphs/all_bymodularity.cmr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/graphs/all_bypackage.cmr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/graphs/all_byprojectmodule.cmr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/graphs/all_nm.cmr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/graphs/all_nm_inheritance.cmr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_bymodularity.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_bymodularity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_bypackage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_bypackage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_byprojectmodule.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_byprojectmodule.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_nm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_nm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_nm_inheritance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/all_nm_inheritance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/graph_htmls/graphlist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/Xdonut.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/circlepack.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/dependency.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/donut.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/donutcharts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/donutchartssimple.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/lbd/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/lbd/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/lbd/graphs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/lbd/metricdescriptions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/lbd/notifications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/lbd/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/lbd/template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/metricchartmethod.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/metricchartpackage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/metricchartx.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/modeldata/defaultclassmetrics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/modeldata/overview_metric_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/modeldata/packagedependency.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/modeldata/summary_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/modeldata/sunburst_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/modeldata/table_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/reportforprint.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/sunburst.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/htmlx/treemap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/html_report_bowlinggame/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/css/animate.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/css/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/css/helptip.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/css/light-bootstrap-dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/css/pe-icon-7-stroke.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/fonts/Pe-icon-7-stroke.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/fonts/Pe-icon-7-stroke.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/fonts/Pe-icon-7-stroke.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/fonts/Pe-icon-7-stroke.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/img/codemr-icon-black-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/img/codemr-white-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/img/default-avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/img/loading-bubbles.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/img/mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/img/new_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/img/sidebar-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/js/bootstrap-checkbox-radio-switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/js/bootstrap-notify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/js/bootstrap-select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/js/chartist.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/js/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/js/jquery-1.10.2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/js/light-bootstrap-dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_alerts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_chartist.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_checkbox-radio-switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_footers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_inputs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_misc.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_navbars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_responsive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_sidebar-and-main-panel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_chartist.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_inputs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_morphing-buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_navbars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_social-buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_tabs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_transparency.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/lbd/mixins/_vendor-prefixes.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/assets/sass/light-bootstrap-dashboard.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/css/barchartstyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/css/graph.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/css/helptip.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/css/legend.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/css/treemap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/css/vis.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/css/animation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/css/codemr-codes.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/css/codemr-embedded.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/css/codemr-ie7-codes.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/css/codemr-ie7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/css/codemr.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/font/codemr.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/font/codemr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/font/codemr.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/font/codemr.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/font-codemr/font/codemr.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/roboto-v15-cyrillic-ext_vietnamese_latin_cyrillic_latin-ext_greek-ext_greek-300.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/roboto-v15-cyrillic-ext_vietnamese_latin_cyrillic_latin-ext_greek-ext_greek-300.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/roboto-v15-cyrillic-ext_vietnamese_latin_cyrillic_latin-ext_greek-ext_greek-700.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/roboto-v15-cyrillic-ext_vietnamese_latin_cyrillic_latin-ext_greek-ext_greek-700.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/roboto-v15-cyrillic-ext_vietnamese_latin_cyrillic_latin-ext_greek-ext_greek-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/roboto-v15-cyrillic-ext_vietnamese_latin_cyrillic_latin-ext_greek-ext_greek-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/fonts/robotofonts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/img/eqGraphlegend.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/img/help.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/circlepack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/d3.tip.v0.6.3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/dependency_wheel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/donut3d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/eq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/metric_definitions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/metricchart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/sunburst.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/treemap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/vis.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/vis_eq_cluster.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/html/js/vis_eq_graph_base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/Xdonut.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/circlepack.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/dependency.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/donut.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/donutcharts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/donutchartssimple.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/lbd/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/lbd/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/lbd/graphs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/lbd/metricdescriptions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/lbd/notifications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/lbd/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/lbd/template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/metricchartmethod.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/metricchartpackage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/metricchartx.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/modeldata/defaultclassmetrics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/modeldata/overview_metric_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/modeldata/packagedependency.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/modeldata/summary_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/modeldata/sunburst_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/modeldata/table_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/reportforprint.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/sunburst.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/htmlx/treemap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/main_report/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codemr/BowlingGame/html/workingsets.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +278,7 @@
       <workItem from="1585642326836" duration="5535000" />
       <workItem from="1585653400239" duration="719000" />
       <workItem from="1585654237455" duration="4105000" />
+      <workItem from="1585726088762" duration="3078000" />
     </task>
     <servers />
   </component>
@@ -83,10 +290,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="555" y="215" width="800" height="677" key="#Inspections/0.30.1920.1050@0.30.1920.1050" timestamp="1585654949124" />
-    <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585654996832">
+    <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585726413092">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.30.1920.1050@0.30.1920.1050" timestamp="1585654996832" />
+    <state x="693" y="408" width="524" height="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.30.1920.1050@0.30.1920.1050" timestamp="1585726413092" />
     <state width="1874" height="277" key="GridCell.Tab.0.bottom" timestamp="1585659304384">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>

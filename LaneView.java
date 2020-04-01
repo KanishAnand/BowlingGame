@@ -122,7 +122,7 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 
 	public void receiveLaneEvent(LaneEvent le) {
 		if (lane.isPartyAssigned()) {
-			int numBowlers = le.getParty().getMembers().size();
+			int numBowlers = le.getPartyMembers().size();
 			while (!initDone) {
 				//System.out.println("chillin' here.");
 				try {
