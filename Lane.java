@@ -136,7 +136,7 @@ import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Date;
 
-public class Lane extends Thread implements PinsetterObserver {	
+public class Lane extends Thread implements PinsetterObserver,LaneInterface {
 	private Party party;
 	private final Pinsetter setter;
 	private final HashMap scores;
