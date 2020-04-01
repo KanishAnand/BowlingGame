@@ -118,6 +118,7 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 	}
 
 	public void receiveLaneEvent(LaneEvent le) {
+//		curBowler.setText( le.getBowler().getNickName() );
 		curBowler.setText( le.getBowler().getNickName() );
 		if ( le.isMechanicalProblem() ) {
 			maintenance.setBackground( Color.RED );
