@@ -38,8 +38,7 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 
 		psv = new PinSetterView( laneNum );
 		Pinsetter ps = lane.getPinsetter();
-//		ps.subscribe(psv);
-		lane.PinsetterSubscribe(psv);
+		ps.subscribe(psv);
 
 		lv = new LaneView( lane, laneNum );
 		lane.subscribe(lv);
@@ -119,7 +118,7 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 
 	public void receiveLaneEvent(LaneEvent le) {
 //		curBowler.setText( le.getBowler().getNickName() );
-		curBowler.setText( le.getBowler().getNickName() );
+		curBowler.setText( le.getBowlerNickName() );
 		if ( le.isMechanicalProblem() ) {
 			maintenance.setBackground( Color.RED );
 		}

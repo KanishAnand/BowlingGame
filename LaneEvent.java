@@ -95,6 +95,9 @@ public class LaneEvent implements  LaneEventInterface{
 	public Bowler getBowler() {
 		return bowler;
 	}
+	public String getBowlerNickName() {
+		return bowler.getNickName();
+	}
 
 }
  

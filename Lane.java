@@ -471,9 +471,6 @@ public class Lane extends Thread implements PinsetterObserver {
 		return setter;	
 	}
 
-	public void PinsetterSubscribe(PinsetterObserver lanestat) {
-		setter.subscribe(lanestat);
-	}
 
 	/**
 	 * Pause the execution of this game
