@@ -22,19 +22,12 @@ import javax.swing.*;
 
 public class NewPatronView extends ViewComponents implements ActionListener {
 
-	private int maxSize;
-
 	private final JFrame win;
-	private final JButton abort;
-	private final JButton finished;
-	private final JTextField nickField;
-	private final JTextField fullField;
-	private final JTextField emailField;
+	private final JButton abort,finished;
+	private final JTextField nickField,fullField,emailField;
 	private String nick, full, email;
-
 	private boolean done;
 
-	private String selectedNick, selectedMember;
 	private final AddPartyView addParty;
 
 	public NewPatronView(AddPartyView v) {

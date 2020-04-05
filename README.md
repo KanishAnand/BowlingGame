@@ -64,7 +64,7 @@ Replaced `(new Integer(((int[]) le.getScore()` with `(Integer.valueOf(((int[]) l
 39. The variable was initialized a value but there was no need as it was assigned afterwards.
 40. Law of Diameter was not followed in many files ex. `int numBowlers = le.getParty().getMembers().size();` this was written in `LaneView` file. I corrected it by making a new
 function itself in Party file which itself returns vector of members `int numBowlers = le.getPartyMembers().size(); `so that would follow Law of Diameter : https://alvinalexander.com/java/java-law-of-demeter-java-examples/ (write advantages)).
-  
+41. Variables that were never used were removed.
 
  
  
