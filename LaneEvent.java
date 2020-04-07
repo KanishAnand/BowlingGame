@@ -29,14 +29,14 @@ import java.util.Vector;
 public class LaneEvent implements  LaneEventInterface{
 
 	private final Party p;
-	int frame;
+//	int frame;
 	final int ball;
 	final Bowler bowler;
 	final int[][] cumulScore;
 	final HashMap score;
 	final int index;
 	final int frameNum;
-	final int[] curScores;
+//	final int[] curScores;
 	final boolean mechProb;
 	
 	public LaneEvent( Party pty, int theIndex, Bowler theBowler, int[][] theCumulScore, HashMap theScore, int theFrameNum, int[] theCurScores, int theBall, boolean mechProblem) {
@@ -45,7 +45,7 @@ public class LaneEvent implements  LaneEventInterface{
 		bowler = theBowler;
 		cumulScore = theCumulScore;
 		score = theScore;
-		curScores = theCurScores;
+//		curScores = theCurScores;
 		frameNum = theFrameNum;
 		ball = theBall;	
 		mechProb = mechProblem;
@@ -64,17 +64,17 @@ public class LaneEvent implements  LaneEventInterface{
 	}
 
 
-	public int[] getCurScores(){ 
-		return curScores;
-	}
+//	public int[] getCurScores(){
+//		return curScores;
+//	}
 	
 	public int getIndex() {
 		return index;
 	}
 
-	public int getFrame( ) {
-		return frame;
-	}
+//	public int getFrame( ) {
+//		return frame;
+//	}
 
 	public int getBall( ) {
 		return ball;
@@ -92,9 +92,9 @@ public class LaneEvent implements  LaneEventInterface{
 		return p.getMembers();
 	}
 	
-	public Bowler getBowler() {
-		return bowler;
-	}
+//	public Bowler getBowler() {
+//		return bowler;
+//	}
 	public String getBowlerNickName() {
 		return bowler.getNickName();
 	}

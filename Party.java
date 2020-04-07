@@ -49,4 +49,28 @@ public class Party {
 		return myBowlers;
     }
 
+	/** assignParty()
+	 *
+	 * assigns a party to this lane
+	 *
+	 * @pre none
+	 * @post the party has been assigned to the lane
+	 *
+	 *
+	 */
+	public void assignParty( Lane curLane ) {
+		curLane.party = this;
+		curLane.resetBowlerIterator();
+		curLane.partyAssigned = true;
+
+		curLane.curScores = new int[myBowlers.size()];
+		curLane.cumulScores = new int[myBowlers.size()][10];
+		curLane.finalScores = new int[myBowlers.size()][128]; //Hardcoding a max of 128 games, bite me.
+		curLane.gameNumber = 0;
+
+		curLane.calculateScore.resetScores(this);
+		curLane.gameFinished = false;
+		curLane.frameNumber = 0;
+	}
+
 }

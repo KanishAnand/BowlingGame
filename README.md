@@ -65,6 +65,8 @@ Replaced `(new Integer(((int[]) le.getScore()` with `(Integer.valueOf(((int[]) l
 40. Law of Diameter was not followed in many files ex. `int numBowlers = le.getParty().getMembers().size();` this was written in `LaneView` file. I corrected it by making a new
 function itself in Party file which itself returns vector of members `int numBowlers = le.getPartyMembers().size(); `so that would follow Law of Diameter : https://alvinalexander.com/java/java-law-of-demeter-java-examples/ (write advantages)).
 41. Variables that were never used were removed.
+42. Moved `assignParty` function to Party file instead of Lane file because we need to assign a party to a lane so I think its more clear to be in Party instead of Lane file.
+
 
  
  

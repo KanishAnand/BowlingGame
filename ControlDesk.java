@@ -134,7 +134,8 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 
 			if (!curLane.isPartyAssigned()) {
 				System.out.println("ok... assigning this party");
-				curLane.assignParty(((Party) partyQueue.next()));
+//				curLane.assignParty(((Party) partyQueue.next()));
+				((Party) partyQueue.next()).assignParty(curLane);
 			}
 		}
 		publish(new ControlDeskEvent(getPartyQueue()));

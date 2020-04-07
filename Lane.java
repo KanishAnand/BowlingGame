@@ -137,29 +137,29 @@ import java.util.HashMap;
 import java.util.Date;
 
 public class Lane extends Thread implements PinsetterObserver,LaneInterface{
-	private Party party;
+	public Party party;
 	private final Pinsetter setter;
 	private final HashMap scores;
 	private final Vector subscribers;
 
-	private final CalculateScore calculateScore;
+	public final CalculateScore calculateScore;
 	
 	private boolean gameIsHalted;
 
-	private boolean partyAssigned;
-	private boolean gameFinished;
+	public boolean partyAssigned;
+	public boolean gameFinished;
 	private Iterator bowlerIterator;
 	private int ball;
 	private int bowlIndex;
-	private int frameNumber;
+	public int frameNumber;
 	private boolean tenthFrameStrike;
 
-	private int[] curScores;
-	private int[][] cumulScores;
+	public int[] curScores;
+	public int[][] cumulScores;
 	private boolean canThrowAgain;
 	
-	private int[][] finalScores;
-	private int gameNumber;
+	public int[][] finalScores;
+	public int gameNumber;
 	
 	private Bowler currentThrower;			// = the thrower who just took a throw
 
@@ -345,33 +345,33 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	 * @pre the party as been assigned
 	 * @post the iterator points to the first bowler in the party
 	 */
-	private void resetBowlerIterator() {
+	public void resetBowlerIterator() {
 		bowlerIterator = (party.getMembers()).iterator();
 	}
 
-	/** assignParty()
-	 * 
-	 * assigns a party to this lane
-	 * 
-	 * @pre none
-	 * @post the party has been assigned to the lane
-	 * 
-	 * @param theParty		Party to be assigned
-	 */
-	public void assignParty( Party theParty ) {
-		party = theParty;
-		resetBowlerIterator();
-		partyAssigned = true;
-		
-		curScores = new int[party.getMembers().size()];
-		cumulScores = new int[party.getMembers().size()][10];
-		finalScores = new int[party.getMembers().size()][128]; //Hardcoding a max of 128 games, bite me.
-		gameNumber = 0;
-		
-		calculateScore.resetScores(party);
-		gameFinished = false;
-		frameNumber = 0;
-	}
+//	/** assignParty()
+//	 *
+//	 * assigns a party to this lane
+//	 *
+//	 * @pre none
+//	 * @post the party has been assigned to the lane
+//	 *
+//	 * @param theParty		Party to be assigned
+//	 */
+//	public void assignParty( Party theParty ) {
+//		party = theParty;
+//		resetBowlerIterator();
+//		partyAssigned = true;
+//
+//		curScores = new int[party.getMembers().size()];
+//		cumulScores = new int[party.getMembers().size()][10];
+//		finalScores = new int[party.getMembers().size()][128]; //Hardcoding a max of 128 games, bite me.
+//		gameNumber = 0;
+//
+//		calculateScore.resetScores(party);
+//		gameFinished = false;
+//		frameNumber = 0;
+//	}
 
 	/** markScore()
 	 *
@@ -419,9 +419,9 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	 * 
 	 * @return true if the game is done, false otherwise
 	 */
-	public boolean isGameFinished() {
-		return gameFinished;
-	}
+//	public boolean isGameFinished() {
+//		return gameFinished;
+//	}
 
 	/** subscribe
 	 * 
@@ -470,11 +470,6 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	public Pinsetter getPinsetter() {
 		return setter;	
 	}
-
-//	public void PinsetterSubscribe(PinsetterObserver laneStat){
-//		setter.subscribe(laneStat);
-//	}
-
 
 	/**
 	 * Pause the execution of this game

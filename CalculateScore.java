@@ -40,7 +40,7 @@ public class CalculateScore {
      * @param cumulScores
      * @return			The bowlers total score
      */
-    @SuppressWarnings("BreakStatement")
+
     public int getScore(Bowler Cur, int frame, int[][] cumulScores, int bowlIndex, int ball) {
         int[] curScore;
         int strikeballs;
