@@ -53,13 +53,13 @@ public class CalculateScore {
         //Iterate through each ball until the current one.
         for (int i = 0; i != current+2; i++){
             //Spare:
-            if( i%2 == 1 && curScore[i - 1] + curScore[i] == 10 && i < current - 1 && i < 19){
+            if(((i % 2) == 1) && ((curScore[i - 1] + curScore[i]) == 10) && (i < (current - 1)) && (i < 19)){
                 //This ball was a the second of a spare.
                 //Also, we're not on the current ball.
                 //Add the next ball to the ith one in cumul.
                 cumulScores[bowlIndex][(i/2)] += curScore[i+1] + curScore[i];
                 //cumulScores[bowlIndex][i/2] += cumulScores[bowlIndex][i/2 -1];
-            } else if( i < current && i%2 == 0 && curScore[i] == 10  && i < 18){
+            } else if((i < current) && ((i % 2) == 0) && (curScore[i] == 10) && (i < 18)){
                 strikeballs = 0;
                 //This ball is the first ball, and was a strike.
                 //If we can get 2 balls after it, good add them to cumul.
