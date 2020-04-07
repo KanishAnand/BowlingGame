@@ -55,7 +55,7 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 	private final int numLanes;
 	
 	/** The collection of subscribers */
-	private final Vector subscribers;
+	public final Vector subscribers;
 
     /**
      * Constructor for the ControlDesk class
@@ -113,25 +113,25 @@ class ControlDesk extends Thread implements ControlDeskInterface{
      *
      */
 
-	public void subscribe(ControlDeskObserver adding) {
-		subscribers.add(adding);
-	}
-
-    /**
-     * Broadcast an event to subscribing objects.
-     * 
-     * @param event	the ControlDeskEvent to broadcast
-     *
-     */
-
-	public void publish(ControlDeskEvent event) {
-		for (Object subscriber : subscribers) {
-			(
-					(ControlDeskObserver) subscriber)
-					.receiveControlDeskEvent(
-							event);
-		}
-	}
+//	public void subscribe(ControlDeskObserver adding) {
+//		subscribers.add(adding);
+//	}
+//
+//    /**
+//     * Broadcast an event to subscribing objects.
+//     *
+//     * @param event	the ControlDeskEvent to broadcast
+//     *
+//     */
+//
+//	public void publish(ControlDeskEvent event) {
+//		for (Object subscriber : subscribers) {
+//			(
+//					(ControlDeskObserver) subscriber)
+//					.receiveControlDeskEvent(
+//							event);
+//		}
+//	}
 
     /**
      * Accessor method for lanes

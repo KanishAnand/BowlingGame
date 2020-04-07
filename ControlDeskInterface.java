@@ -7,7 +7,7 @@ public interface ControlDeskInterface {
 //    void addPartyQueue(Vector partyNicks);
 //    Vector getPartyQueue();
     int getNumLanes();
-    void subscribe(ControlDeskObserver adding);
+//    void subscribe(ControlDeskObserver adding);
     HashSet getLanes();
 }
 

@@ -19,7 +19,7 @@ public class PartyQueue {
                 ((Party) controlDesk.partyQueue.next()).assignParty(curLane);
             }
         }
-        controlDesk.publish(new ControlDeskEvent(PartyQueue.getPartyQueue(controlDesk)));
+        ControlDeskSubscriber.publish(controlDesk,new ControlDeskEvent(PartyQueue.getPartyQueue(controlDesk)));
     }
 
     /**
@@ -37,7 +37,7 @@ public class PartyQueue {
         }
         Party newParty = new Party(partyBowlers);
         controlDesk.partyQueue.add(newParty);
-        controlDesk.publish(new ControlDeskEvent(getPartyQueue(controlDesk)));
+        ControlDeskSubscriber.publish(controlDesk,new ControlDeskEvent(getPartyQueue(controlDesk)));
     }
 
     /**

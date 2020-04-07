@@ -9,7 +9,8 @@ public class drive {
 		ControlDesk controlDesk = a.getControlDesk();
 
 		ControlDeskView cdv = new ControlDeskView( controlDesk, maxPatronsPerParty);
-		controlDesk.subscribe( cdv );
+//		controlDesk.subscribe( cdv );
+		ControlDeskSubscriber.subscribe(controlDesk,cdv);
 
 	}
 }
