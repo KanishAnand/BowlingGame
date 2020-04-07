@@ -34,7 +34,6 @@ public class Bowler implements BowlerInterface {
   	email = mail;
     }
 
-
     public String getNickName() {
 
         return nickName;  

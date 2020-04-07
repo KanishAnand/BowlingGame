@@ -28,7 +28,20 @@ public class CalculateScore {
 //        frameNumber = 0;
     }
 
-
+    /** markScore()
+     *
+     * Method that marks a bowlers score on the board.
+     *
+     */
+     public void markScore(Lane lane,int ball,int score){
+        int[] curScore;
+        int index =  ( lane.frameNumber * 2 + ball);
+        curScore = (int[]) scores.get(lane.currentThrower);
+        curScore[ index - 1] = score;
+        lane.scores.put(lane.currentThrower, curScore);
+        getScore( lane.currentThrower, lane.frameNumber+1 ,lane.cumulScores,lane.bowlIndex,ball);
+        lane.publish( lane.lanePublish() );
+    }
 
     /** getScore()
      *

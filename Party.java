@@ -49,6 +49,17 @@ public class Party {
 		return myBowlers;
     }
 
+	/** resetBowlerIterator()
+	 *
+	 * sets the current bower iterator back to the first bowler
+	 *
+	 * @pre the party as been assigned
+	 * @post the iterator points to the first bowler in the party
+	 */
+	public void resetBowlerIterator(Lane lane) {
+		lane.bowlerIterator = myBowlers.iterator();
+	}
+
 	/** assignParty()
 	 *
 	 * assigns a party to this lane
@@ -60,7 +71,7 @@ public class Party {
 	 */
 	public void assignParty( Lane curLane ) {
 		curLane.party = this;
-		curLane.resetBowlerIterator();
+		resetBowlerIterator(curLane);
 		curLane.partyAssigned = true;
 
 		curLane.curScores = new int[myBowlers.size()];

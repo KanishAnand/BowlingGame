@@ -37,7 +37,7 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 		psShowing=false;
 
 		psv = new PinSetterView( laneNum );
-		Pinsetter ps = lane.getPinsetter();
+		Pinsetter ps = lane.setter;
 		ps.subscribe(psv);
 
 		lv = new LaneView( lane, laneNum );

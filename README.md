@@ -66,6 +66,7 @@ Replaced `(new Integer(((int[]) le.getScore()` with `(Integer.valueOf(((int[]) l
 function itself in Party file which itself returns vector of members `int numBowlers = le.getPartyMembers().size(); `so that would follow Law of Diameter : https://alvinalexander.com/java/java-law-of-demeter-java-examples/ (write advantages)).
 41. Variables that were never used were removed.
 42. Moved `assignParty` function to Party file instead of Lane file because we need to assign a party to a lane so I think its more clear to be in Party instead of Lane file.
+43. `Lane.java` was too messed up file. It was doing many things itself. So I made one more class `calculateScore` in which I moved all part Lane file was doing related to calculating the score.
 
 
  
