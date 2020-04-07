@@ -46,10 +46,10 @@ import java.io.*;
 class ControlDesk extends Thread implements ControlDeskInterface{
 
 	/** The collection of Lanes */
-	private final HashSet lanes;
+	public final HashSet lanes;
 
 	/** The party wait queue */
-	private final Queue partyQueue;
+	public final Queue partyQueue;
 
 	/** The number of lanes represented */
 	private final int numLanes;
@@ -85,7 +85,7 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 	public void run() {
 		while (true) {
 			
-			assignLane();
+			PartyQueue.assignLane(this);
 			
 			try {
 				sleep(250);
@@ -93,88 +93,6 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 				e.printStackTrace();
 			}
 		}
-	}
-		
-
-    /**
-     * Retrieves a matching Bowler from the bowler database.
-     *
-     * @param nickName	The NickName of the Bowler
-     *
-     * @return a Bowler object.
-     *
-     */
-
-	public Bowler registerPatron(String nickName) {
-		Bowler patron = null;
-
-		try {
-			// only one patron / nick.... no dupes, no checks
-
-			patron = BowlerFile.getBowlerInfo(nickName);
-
-		} catch (IOException e) {
-			System.err.println("Error..." + e);
-		}
-
-		return patron;
-	}
-
-    /**
-     * Iterate through the available lanes and assign the paties in the wait queue if lanes are available.
-     *
-     */
-
-	public void assignLane() {
-		Iterator it = lanes.iterator();
-
-		while (it.hasNext() && partyQueue.hasMoreElements()) {
-			Lane curLane = (Lane) it.next();
-
-			if (!curLane.isPartyAssigned()) {
-				System.out.println("ok... assigning this party");
-//				curLane.assignParty(((Party) partyQueue.next()));
-				((Party) partyQueue.next()).assignParty(curLane);
-			}
-		}
-		publish(new ControlDeskEvent(getPartyQueue()));
-	}
-
-	/**
-     * Creates a party from a Vector of nickNAmes and adds them to the wait queue.
-     *
-     * @param partyNicks	A Vector of NickNames
-     *
-     */
-
-	public void addPartyQueue(Vector partyNicks) {
-		Vector partyBowlers = new Vector();
-		for (Object partyNick : partyNicks) {
-			Bowler newBowler = registerPatron(((String) partyNick));
-			partyBowlers.add(newBowler);
-		}
-		Party newParty = new Party(partyBowlers);
-		partyQueue.add(newParty);
-		publish(new ControlDeskEvent(getPartyQueue()));
-	}
-
-    /**
-     * Returns a Vector of party names to be displayed in the GUI representation of the wait queue.
-	 *
-     * @return a Vecotr of Strings
-     *
-     */
-
-	public Vector getPartyQueue() {
-		Vector displayPartyQueue = new Vector();
-		for (int i = 0; i < partyQueue.asVector().size(); i++ ) {
-			String nextParty =
-				((Bowler) ((Party) partyQueue.asVector().get( i ) ).getMembers()
-					.get(0))
-					.getNickName() + "'s Party";
-			displayPartyQueue.addElement(nextParty);
-		}
-		return displayPartyQueue;
 	}
 
     /**

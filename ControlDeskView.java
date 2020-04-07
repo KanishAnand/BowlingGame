@@ -118,7 +118,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 			AddPartyView addPartyWin = new AddPartyView(this, maxMembers);
 		}
 		if (e.getSource().equals(assign)) {
-			controlDesk.assignLane();
+			PartyQueue.assignLane(controlDesk);
 		}
 		if (e.getSource().equals(finished)) {
 			win.setVisible(false);
@@ -134,7 +134,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 	 */
 
 	public void updateAddParty(AddPartyView addPartyView) {
-		controlDesk.addPartyQueue(addPartyView.getParty());
+		PartyQueue.addPartyQueue(controlDesk,addPartyView.getParty());
 	}
 
 	/**
