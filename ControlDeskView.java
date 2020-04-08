@@ -2,10 +2,10 @@
  *
  *  Version:
  *			$Id$
- * 
+ *
  *  Revisions:
  * 		$Log$
- * 
+ *
  */
 
 /**
@@ -21,7 +21,7 @@ import java.util.*;
 
 public class ControlDeskView implements ActionListener, ControlDeskObserver{
 
-	private final JButton addParty,finished,assign;
+	private final JButton addParty,finished,assign,query;
 	private final JFrame win;
 	private final JList partyList;
 	private final int maxMembers;
@@ -51,6 +51,8 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 		assign.addActionListener(this);
 		finished = ViewComponents.MakeButtons("Finished",controlsPanel);
 		finished.addActionListener(this);
+		query = ViewComponents.MakeButtons("Query",controlsPanel);
+		query.addActionListener(this);
 
 		// Lane Status Panel
 		JPanel laneStatusPanel = ViewComponents.MakePanel(numLanes,1,"Lane Status");
@@ -121,6 +123,9 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 			win.setVisible(false);
 			System.exit(0);
 		}
+		if (e.getSource().equals(query)) {
+			QueryView queryview = new QueryView();
+		}
 	}
 
 	/**
@@ -140,7 +145,7 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 	 * @param ce	the ControlDeskEvent that triggered the handler
 	 *
 	 */
-	
+
 	public void receiveControlDeskEvent(ControlDeskEvent ce) {
 		partyList.setListData(ce.getPartyQueue());
 	}

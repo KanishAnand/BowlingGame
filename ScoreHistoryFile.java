@@ -14,7 +14,7 @@ public class ScoreHistoryFile {
 	private static final String SCOREHISTORY_DAT = "SCOREHISTORY.DAT";
 
 	public static void addScore(String nick, String date, String score)
-		throws IOException {
+			throws IOException {
 
 		String data = nick + "\t" + date + "\t" + score + "\n";
 
@@ -25,11 +25,11 @@ public class ScoreHistoryFile {
 	}
 
 	public static Vector getScores(String nick)
-		throws IOException {
+			throws IOException {
 		Vector scores = new Vector();
 
 		BufferedReader in =
-			new BufferedReader(new FileReader(SCOREHISTORY_DAT));
+				new BufferedReader(new FileReader(SCOREHISTORY_DAT));
 		String data;
 		while ((data = in.readLine()) != null) {
 			// File format is nick\tfname\te-mail
@@ -42,4 +42,80 @@ public class ScoreHistoryFile {
 		return scores;
 	}
 
+	public static Vector getHighestAndLowest(String nick, boolean isGeneral)
+			throws IOException {
+		Vector scores = new Vector();
+
+		BufferedReader in =
+				new BufferedReader(new FileReader(SCOREHISTORY_DAT));
+		String data;
+		while ((data = in.readLine()) != null) {
+			String[] scoredata = data.split("\t");
+			scores.add(new Score(scoredata[0], scoredata[1], scoredata[2]));
+		}
+
+		Iterator scoreIt = scores.iterator();
+		int max = -1;
+		int min = 301;
+		String bestplayer="";
+		String worstplayer="";
+
+		while (scoreIt.hasNext()) {
+			Score score = (Score) scoreIt.next();
+//			System.out.print(nick);
+//			System.out.print(" ");
+//			System.out.print(score.getNickName());
+//			System.out.print(" ");
+//			System.out.print(nick.equals(score.getNickName()));
+//			System.out.print(" ");
+//			System.out.print(nick.length());
+//			System.out.println(score.getNickName().length());
+
+			if (isGeneral || (!isGeneral && score.getNickName().equals(nick))) // isGeneral is a Boolean variable
+			{
+				int intScore = Integer.parseInt(score.getScore());
+				System.out.println(score.getScore());
+				System.out.println(intScore);
+
+				if (intScore > max)
+				{
+					bestplayer = score.getNickName();
+					max = intScore;
+				}
+				if (intScore < min)
+				{
+					worstplayer = score.getNickName();
+					min = intScore;
+				}
+			}
+		}
+
+		Vector<String> toreturn = new Vector<>();
+		toreturn.add(Integer.toString(max));
+		toreturn.add(bestplayer);
+		toreturn.add(Integer.toString(min));
+		toreturn.add(worstplayer);
+
+		return toreturn;
+	}
+
+	public static double averageScore(String nick) {
+		Vector scores = null;
+		try{
+			scores = getScores(nick);
+		} catch (Exception e){System.err.println("Error: " + e);}
+
+		assert scores != null;
+		Iterator scoreIt = scores.iterator();
+
+		double sum = 0, count = 0;
+		while (scoreIt.hasNext()) {
+			Score score = (Score) scoreIt.next();
+			sum = sum + (double)Integer.parseInt(score.getScore());
+			count = count + 1.0;
+		}
+
+		return sum/count;
+	}
 }
+
