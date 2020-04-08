@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 public interface LaneEventInterface extends java.rmi.Remote {
 //	boolean isMechanicalProblem();
 //	int getFrameNum() throws java.rmi.RemoteException;

@@ -37,7 +37,7 @@ abstract class ViewComponents {
         return panel;
     }
 
-    public JPanel GridLayoutPanel(int row,int col){
+    public static JPanel GridLayoutPanel(int row, int col){
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(row,col));
         return panel;

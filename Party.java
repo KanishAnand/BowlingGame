@@ -70,13 +70,13 @@ public class Party {
 	 *
 	 */
 	public void assignParty( Lane curLane ) {
-		curLane.party = this;
+		curLane.calculateScore.party = this;
 		resetBowlerIterator(curLane);
-		curLane.partyAssigned = true;
+		curLane.calculateScore.partyAssigned = true;
 
-		curLane.curScores = new int[myBowlers.size()];
-		curLane.cumulScores = new int[myBowlers.size()][10];
-		curLane.finalScores = new int[myBowlers.size()][128]; //Hardcoding a max of 128 games, bite me.
+		curLane.calculateScore.curScores = new int[myBowlers.size()];
+		curLane.calculateScore.cumulScores = new int[myBowlers.size()][10];
+		curLane.calculateScore.finalScores = new int[myBowlers.size()][128]; //Hardcoding a max of 128 games, bite me.
 		curLane.gameNumber = 0;
 
 		curLane.calculateScore.resetScores(this);

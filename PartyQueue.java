@@ -14,7 +14,7 @@ public class PartyQueue {
         while (it.hasNext() && controlDesk.partyQueue.hasMoreElements()) {
             Lane curLane = (Lane) it.next();
 
-            if (!curLane.isPartyAssigned()) {
+            if (!curLane.calculateScore.partyAssigned) {
                 System.out.println("ok... assigning this party");
                 ((Party) controlDesk.partyQueue.next()).assignParty(curLane);
             }

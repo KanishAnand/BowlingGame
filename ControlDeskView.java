@@ -21,15 +21,10 @@ import java.util.*;
 
 public class ControlDeskView  extends ViewComponents implements ActionListener, ControlDeskObserver{
 
-	private final JButton addParty;
-	private final JButton finished;
-	private final JButton assign;
+	private final JButton addParty,finished,assign;
 	private final JFrame win;
 	private final JList partyList;
-	
-	/** The maximum  number of members in a party */
 	private final int maxMembers;
-	
 	private final ControlDesk controlDesk;
 
 	/**
@@ -65,11 +60,9 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 		while (it.hasNext()) {
 			Lane curLane = (Lane) it.next();
 			LaneStatusView laneStat = new LaneStatusView(curLane,(laneCount+1));
-//			curLane.subscribe(laneStat);
 			LaneSubscriber.subscribe(curLane,laneStat);
-//			curLane.setter.subscribe(laneStat);
 			PinsetterSubscriber.subscribe(curLane.setter,laneStat);
-			JPanel lanePanel = laneStat.showLane();
+			JPanel lanePanel = laneStat.jp;
 			lanePanel.setBorder(new TitledBorder("Lane " + ++laneCount ));
 			laneStatusPanel.add(lanePanel);
 		}
@@ -88,7 +81,6 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 		partyPane.setVerticalScrollBarPolicy(
 				ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		partyPanel.add(partyPane);
-		//		partyPanel.add(partyList);
 
 		// Clean up main panel
 		colPanel.add(controlsPanel, "East");

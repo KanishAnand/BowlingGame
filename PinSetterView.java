@@ -48,7 +48,7 @@ public class PinSetterView implements PinsetterObserver {
 	
 	JPanel top = new JPanel();
 
-		JPanel firstRoll = new JPanel();
+	JPanel firstRoll = new JPanel();
 	firstRoll.setBackground( Color.yellow );
 	
 	secondRoll = new JPanel();
@@ -58,10 +58,10 @@ public class PinSetterView implements PinsetterObserver {
 	top.add ( secondRoll, BorderLayout.EAST );
 
 	//**********************Grid of the pins**************************
-	SetFourthRow(pins);
-	SetThirdRow(pins);
-	SetSecondRow(pins);
-	SetFirstRow(pins);
+	PinSetterRows.SetFourthRow(pins,pinVect);
+	PinSetterRows.SetThirdRow(pins,pinVect);
+	PinSetterRows.SetSecondRow(pins,pinVect);
+	PinSetterRows.SetFirstRow(pins,pinVect);
 
 	top.setBackground ( Color.black );
 	cpanel.add ( top, BorderLayout.NORTH );
@@ -72,64 +72,7 @@ public class PinSetterView implements PinsetterObserver {
 	cpanel.add ( pins, BorderLayout.CENTER );
 	
 	frame.pack();
-//	frame.show();
     }
-
-    public void SetFourthRow(JPanel pins){
-    	for (int i=7;i<=10;i++){
-			JPanel value = new JPanel();
-			JLabel label = new JLabel(Integer.toString(i));
-			value.add(label);
-			pinVect.add(label);
-			pins.add(value);
-			if(i != 10) {
-				pins.add(new JPanel());
-			}
-		}
-	}
-
-	public void SetThirdRow(JPanel pins){
-		for (int i=4;i<=6;i++){
-			JPanel value = new JPanel();
-			JLabel label = new JLabel(Integer.toString(i));
-			value.add(label);
-			pinVect.add(label);
-			pins.add(new JPanel());
-			pins.add(value);
-		}
-	}
-
-	public void SetSecondRow(JPanel pins){
-    	pins.add(new JPanel());
-		pins.add(new JPanel());
-		for (int i=2;i<=3;i++){
-			JPanel value = new JPanel();
-			JLabel label = new JLabel(Integer.toString(i));
-			value.add(label);
-			pinVect.add(label);
-			pins.add(new JPanel());
-			pins.add(value);
-		}
-		pins.add(new JPanel());
-		pins.add(new JPanel());
-	}
-
-	public void SetFirstRow(JPanel pins){
-		pins.add(new JPanel());
-		pins.add(new JPanel());
-		pins.add(new JPanel());
-		for (int i=1;i<=1;i++){
-			JPanel value = new JPanel();
-			JLabel label = new JLabel(Integer.toString(i));
-			value.add(label);
-			pinVect.add(label);
-			pins.add(value);
-		}
-		pins.add(new JPanel());
-		pins.add(new JPanel());
-		pins.add(new JPanel());
-	}
-
 
     /**
      * This method receives a pinsetter event.  The event is the current
