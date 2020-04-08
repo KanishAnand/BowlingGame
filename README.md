@@ -67,6 +67,8 @@ function itself in Party file which itself returns vector of members `int numBow
 41. Variables that were never used were removed.
 42. Moved `assignParty` function to Party file instead of Lane file because we need to assign a party to a lane so I think its more clear to be in Party instead of Lane file.
 43. `Lane.java` was too messed up file. It was doing many things itself. So I made one more class `calculateScore` in which I moved all part Lane file was doing related to calculating the score.
+44. In `ControlDesk` there was lack of cohesion due to including of all types of functions in it ex : functions related to party queue were also present in ControlDesk itself so I made another file for that which
+improved cohesion in that file.
 
 
  

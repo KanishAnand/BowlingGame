@@ -41,7 +41,8 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 		ps.subscribe(psv);
 
 		lv = new LaneView( lane, laneNum );
-		lane.subscribe(lv);
+//		lane.subscribe(lv);
+		LaneSubscriber.subscribe(lane,lv);
 
 
 		jp = FlowLayoutPanel();

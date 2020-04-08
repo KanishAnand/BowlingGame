@@ -40,7 +40,8 @@ public class CalculateScore {
         curScore[ index - 1] = score;
         lane.scores.put(lane.currentThrower, curScore);
         getScore( lane.currentThrower, lane.frameNumber+1 ,lane.cumulScores,lane.bowlIndex,ball);
-        lane.publish( lane.lanePublish() );
+//        lane.publish( lane.lanePublish() );
+        LaneSubscriber.publish(lane,lane.lanePublish());
     }
 
     /** getScore()

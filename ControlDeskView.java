@@ -65,7 +65,8 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 		while (it.hasNext()) {
 			Lane curLane = (Lane) it.next();
 			LaneStatusView laneStat = new LaneStatusView(curLane,(laneCount+1));
-			curLane.subscribe(laneStat);
+//			curLane.subscribe(laneStat);
+			LaneSubscriber.subscribe(curLane,laneStat);
 			curLane.setter.subscribe(laneStat);
 			JPanel lanePanel = laneStat.showLane();
 			lanePanel.setBorder(new TitledBorder("Lane " + ++laneCount ));

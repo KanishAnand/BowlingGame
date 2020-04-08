@@ -140,7 +140,7 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	public Party party;
 	public final Pinsetter setter;
 	public final HashMap scores;
-	private final Vector subscribers;
+	public final Vector subscribers;
 
 	public final CalculateScore calculateScore;
 	
@@ -263,7 +263,8 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 					party = null;
 					partyAssigned = false;
 					
-					publish(lanePublish());
+//					publish(lanePublish());
+					LaneSubscriber.publish(this,lanePublish());
 					
 					int myIndex = 0;
 					while (scoreIt.hasNext()){
@@ -357,48 +358,13 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 		return partyAssigned;
 	}
 
-	/** subscribe
-	 * 
-	 * Method that will add a subscriber
-	 *
-	 */
-
-	public void subscribe( LaneObserver adding ) {
-		subscribers.add( adding );
-	}
-
-	/** unsubscribe
-	 * 
-	 * Method that unsubscribes an observer from this object
-	 * 
-	 * @param removing	The observer to be removed
-	 */
-	
-	public void unsubscribe( LaneObserver removing ) {
-		subscribers.remove( removing );
-	}
-
-	/** publish
-	 *
-	 * Method that publishes an event to subscribers
-	 * 
-	 * @param event	Event that is to be published
-	 */
-
-	public void publish( LaneEvent event ) {
-		if( subscribers.size() > 0 ) {
-			for (Object subscriber : subscribers) {
-				((LaneObserver) subscriber).receiveLaneEvent(event);
-			}
-		}
-	}
-	
 	/**
 	 * Pause the execution of this game
 	 */
 	public void pauseGame() {
 		gameIsHalted = true;
-		publish(lanePublish());
+//		publish(lanePublish());
+		LaneSubscriber.publish(this,lanePublish());
 	}
 	
 	/**
@@ -406,6 +372,7 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	 */
 	public void unPauseGame() {
 		gameIsHalted = false;
-		publish(lanePublish());
+//		publish(lanePublish());
+		LaneSubscriber.publish(this,lanePublish());
 	}
 }
