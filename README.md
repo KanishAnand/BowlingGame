@@ -71,6 +71,8 @@ function itself in Party file which itself returns vector of members `int numBow
 improved cohesion in that file.
 45. In files like Lane,ControlDesk and Pinsetter where `observerPattern` design was followed for subscribing and publishing the events all functions of subscribing and publishing were present
 in the same file itself so I created different files for subscribing and publishing purpose ex `ControlDeskSubscriber`,`LaneSubscriber` which helped to increase the cohesion.
+46. There were some variables in `LaneEvent` file which were public but still there getter functions were made which had no need so I removed some of them carefully which could be better to remove.
+
 
 
  

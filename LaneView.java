@@ -132,9 +132,9 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 				}
 			}
 
-			if (le.getFrameNum() == 1
-				&& le.getBall() == 0
-				&& le.getIndex() == 0) {
+			if (le.frameNum == 1
+				&& le.ball == 0
+				&& le.index == 0) {
 				System.out.println("Making the frame.");
 				cpanel.removeAll();
 				cpanel.add(makeFrame(le.getParty()), "Center");
@@ -157,38 +157,38 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 
 			}
 
-			int[][] lescores = le.getCumulScore();
+			int[][] lescores = le.cumulScore;
 			for (int k = 0; k < numBowlers; k++) {
-				for (int i = 0; i <= le.getFrameNum() - 1; i++) {
+				for (int i = 0; i <= le.frameNum - 1; i++) {
 					if (lescores[k][i] != 0)
 						scoreLabel[k][i].setText(
 							(Integer.valueOf(lescores[k][i])).toString());
 				}
 				for (int i = 0; i < 21; i++) {
-					if (((int[]) le.getScore()
+					if (((int[]) le.score
 						.get(bowlers.get(k)))[i]
 						!= -1)
-						if (((int[]) le.getScore()
+						if (((int[]) le.score
 							.get(bowlers.get(k)))[i]
 							== 10
 							&& (i % 2 == 0 || i == 19))
 							ballLabel[k][i].setText("X");
 						else if (
 							i > 0
-								&& ((int[]) le.getScore()
+								&& ((int[]) le.score
 									.get(bowlers.get(k)))[i]
-									+ ((int[]) le.getScore()
+									+ ((int[]) le.score
 										.get(bowlers.get(k)))[i
 									- 1]
 									== 10
 								&& i % 2 == 1)
 							ballLabel[k][i].setText("/");
-						else if ( ((int[]) le.getScore().get(bowlers.get(k)))[i] == -2 ){
+						else if ( ((int[]) le.score.get(bowlers.get(k)))[i] == -2 ){
 							
 							ballLabel[k][i].setText("F");
 						} else
 							ballLabel[k][i].setText(
-								(Integer.valueOf(((int[]) le.getScore()
+								(Integer.valueOf(((int[]) le.score
 										.get(bowlers.get(k)))[i]))
 									.toString());
 				}
