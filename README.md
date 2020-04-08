@@ -73,7 +73,8 @@ improved cohesion in that file.
 in the same file itself so I created different files for subscribing and publishing purpose ex `ControlDeskSubscriber`,`LaneSubscriber` which helped to increase the cohesion.
 46. There were some variables in `LaneEvent` file which were public but still there getter functions were made which had no need so I removed some of them carefully which could be better to remove.
 47. Make A new file for Setting rows of Pinsetter because it involved different type of spacing in various rows so I made different file `PinSetterRows` so that we can edit that directly.
-
+48. `LaneEvent` was taking alot of parameters to decrease them I split function and removed some useless parameters and then I encapsulated remaining with help of map. Like some of parameters were replaced by just one 
+object of class created by me `CalculateScore`.
 
 
  

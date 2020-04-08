@@ -24,6 +24,7 @@
  */
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 
 public class LaneEvent implements  LaneEventInterface{
@@ -37,15 +38,16 @@ public class LaneEvent implements  LaneEventInterface{
 	final int frameNum;
 	final boolean mechProb;
 	
-	public LaneEvent( Party pty, int theIndex, Bowler theBowler, int[][] theCumulScore, HashMap theScore, int theFrameNum, int theBall, boolean mechProblem) {
-		p = pty;
-		index = theIndex;
-		bowler = theBowler;
-		cumulScore = theCumulScore;
-		score = theScore;
-		frameNum = theFrameNum;
-		ball = theBall;	
-		mechProb = mechProblem;
+	public LaneEvent(Map<Object,Object> params){
+		CalculateScore calculatescore = (CalculateScore) params.get("calculateScore");
+		p = calculatescore.party;
+		index = (int) params.get("bowlIndex");
+		bowler = (Bowler) params.get("currentThrower");
+		cumulScore = calculatescore.cumulScores;
+		score = calculatescore.scores;
+		frameNum = (int) params.get("frameNumber");
+		ball = (int) params.get("ball");
+		mechProb = (boolean) params.get("gameIsHalted");
 	}
 
 	public Party getParty() {

@@ -46,7 +46,6 @@ public class LaneView implements LaneObserver, ActionListener {
 	}
 
 	private JPanel makeFrame(Party party) {
-
 		initDone = false;
 		bowlers = party.getMembers();
 		int numBowlers = bowlers.size();
@@ -96,7 +95,6 @@ public class LaneView implements LaneObserver, ActionListener {
 				maintenance.addActionListener(this);
 
 				cpanel.add(buttonPanel, "South");
-
 				frame.pack();
 			}
 

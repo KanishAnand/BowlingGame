@@ -131,10 +131,7 @@
  * 
  */
 
-import java.util.Vector;
-import java.util.Iterator;
-import java.util.HashMap;
-import java.util.Date;
+import java.util.*;
 
 public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	public final Pinsetter setter;
@@ -323,7 +320,14 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	 * @return		The new lane event
 	 */
 	public LaneEvent lanePublish() {
-		return new LaneEvent(calculateScore.party, bowlIndex, currentThrower, calculateScore.cumulScores, calculateScore.scores, frameNumber+1, ball, gameIsHalted);
+		Map<Object,Object> params = new HashMap<Object,Object>();
+		params.put("calculateScore",calculateScore);
+		params.put("bowlIndex",bowlIndex);
+		params.put("currentThrower",currentThrower) ;
+		params.put("frameNumber",frameNumber+1);
+		params.put("ball",ball);
+		params.put("gameIsHalted",gameIsHalted);
+		return new LaneEvent(params);
 	}
 
 	/** isPartyAssigned()
