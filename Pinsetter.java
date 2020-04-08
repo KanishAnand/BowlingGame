@@ -75,7 +75,7 @@ import java.util.*;
 public class Pinsetter {
 
 	private final Random rnd;
-	private final Vector subscribers;
+	public final Vector subscribers;
 
 	private final boolean[] pins;
 			/* 0-9 of state of pine, true for standing, 
@@ -191,16 +191,16 @@ public class Pinsetter {
 		}
 	}		
 
-	/** subscribe()
-	 * 
-	 * subscribe objects to send events to
-	 * 
-	 * @pre none
-	 * @post the subscriber object will recieve events when their generated
-	 */
-	public void subscribe(PinsetterObserver subscriber) {
-		subscribers.add(subscriber);
-	}
+//	/** subscribe()
+//	 *
+//	 * subscribe objects to send events to
+//	 *
+//	 * @pre none
+//	 * @post the subscriber object will recieve events when their generated
+//	 */
+//	public void subscribe(PinsetterObserver subscriber) {
+//		subscribers.add(subscriber);
+//	}
 
 }
 

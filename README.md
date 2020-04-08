@@ -69,6 +69,8 @@ function itself in Party file which itself returns vector of members `int numBow
 43. `Lane.java` was too messed up file. It was doing many things itself. So I made one more class `calculateScore` in which I moved all part Lane file was doing related to calculating the score.
 44. In `ControlDesk` there was lack of cohesion due to including of all types of functions in it ex : functions related to party queue were also present in ControlDesk itself so I made another file for that which
 improved cohesion in that file.
+45. In files like Lane,ControlDesk and Pinsetter where `observerPattern` design was followed for subscribing and publishing the events all functions of subscribing and publishing were present
+in the same file itself so I created different files for subscribing and publishing purpose ex `ControlDeskSubscriber`,`LaneSubscriber` which helped to increase the cohesion.
 
 
  

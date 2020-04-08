@@ -29,14 +29,12 @@ import java.util.Vector;
 public class LaneEvent implements  LaneEventInterface{
 
 	private final Party p;
-//	int frame;
 	final int ball;
 	final Bowler bowler;
 	final int[][] cumulScore;
 	final HashMap score;
 	final int index;
 	final int frameNum;
-//	final int[] curScores;
 	final boolean mechProb;
 	
 	public LaneEvent( Party pty, int theIndex, Bowler theBowler, int[][] theCumulScore, HashMap theScore, int theFrameNum, int[] theCurScores, int theBall, boolean mechProblem) {

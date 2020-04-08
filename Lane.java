@@ -182,7 +182,8 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 
 		gameNumber = 0;
 
-		setter.subscribe( this );
+//		setter.subscribe( this );
+		PinsetterSubscriber.subscribe(setter,this);
 		
 		this.start();
 	}

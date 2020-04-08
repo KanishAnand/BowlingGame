@@ -7,7 +7,7 @@ public class LaneSubscriber {
      *
      */
 
-    public static void subscribe( Lane lane,LaneObserver adding ) {
+    public static void subscribe(Lane lane,LaneObserver adding ) {
         lane.subscribers.add( adding );
     }
 
