@@ -76,7 +76,7 @@ public class AddPartyView extends ViewComponents implements AddPartyViewInterfac
 
 		partyList = new JList(empty);
 		partyList.setFixedCellWidth(120);
-		partyList.setVisibleRowCount(5);
+		partyList.setVisibleRowCount(6);
 		partyList.addListSelectionListener(this);
 		JScrollPane partyPane = new JScrollPane(partyList);
 		//        partyPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
