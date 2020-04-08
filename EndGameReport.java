@@ -13,7 +13,7 @@ import javax.swing.event.*;
 
 import java.util.*;
 
-public class EndGameReport extends ViewComponents implements ActionListener, ListSelectionListener {
+public class EndGameReport implements ActionListener, ListSelectionListener {
 
 	private final JFrame win;
 	private final JButton printButton;
@@ -30,12 +30,12 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 		result =0;
 		retVal = new Vector();
 
-		win = MakeWindow("End Game Report for " + partyName + "?" );
+		win = ViewComponents.MakeWindow("End Game Report for " + partyName + "?" );
 
-		JPanel colPanel = GridLayoutPanel(1,2);
+		JPanel colPanel = ViewComponents.GridLayoutPanel(1,2);
 
 		// Member Panel
-		JPanel partyPanel = FlowLayoutPanel();
+		JPanel partyPanel = ViewComponents.FlowLayoutPanel();
 		partyPanel.setBorder(new TitledBorder("Party Members"));
 		
 		Vector myVector = new Vector();
@@ -52,19 +52,21 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 		partyPanel.add(memberList);
 
 		// Button Panel
-		JPanel buttonPanel = GridLayoutPanel(2,1);
+		JPanel buttonPanel = ViewComponents.GridLayoutPanel(2,1);
 
-		printButton = MakeButtons("PrintReport",buttonPanel);
-		finished = MakeButtons("Finished",buttonPanel);
+		printButton = ViewComponents.MakeButtons("PrintReport",buttonPanel);
+		printButton.addActionListener(this);
+		finished = ViewComponents.MakeButtons("Finished",buttonPanel);
+		finished.addActionListener(this);
 
 		// Clean up main panel
 		colPanel.add(partyPanel);
 		colPanel.add(buttonPanel);
 
-		AddContentsToWindow(win,colPanel);
+		ViewComponents.AddContentsToWindow(win,colPanel);
 
 		// Center Window on Screen
-		SetWindowPosition(win);
+		ViewComponents.SetWindowPosition(win);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -93,10 +95,6 @@ public class EndGameReport extends ViewComponents implements ActionListener, Lis
 			}
 		}
 		return retVal;	
-	}
-	
-	public void destroy() {
-		win.setVisible(false);
 	}
 
 	public static void main(String[] args) {

@@ -19,15 +19,15 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.text.View;
 
-public class NewPatronView extends ViewComponents implements ActionListener {
+public class NewPatronView implements ActionListener {
 
 	private final JFrame win;
 	private final JButton abort,finished;
 	private final JTextField nickField,fullField,emailField;
 	private String nick, full, email;
 	private boolean done;
-
 	private final AddPartyView addParty;
 
 	public NewPatronView(AddPartyView v) {
@@ -35,32 +35,34 @@ public class NewPatronView extends ViewComponents implements ActionListener {
 		addParty=v;	
 		done = false;
 
-		win = MakeWindow("Add Patron");
+		win = ViewComponents.MakeWindow("Add Patron");
 
-		JPanel colPanel = MakeMainPanel();
+		JPanel colPanel = ViewComponents.MakeMainPanel();
 
 		// Patron Panel
-		JPanel patronPanel = MakePanel(3,1,"Your Info");
+		JPanel patronPanel = ViewComponents.MakePanel(3,1,"Your Info");
 
 		// Controls Panel
-		nickField = MakeField("Nick Name",patronPanel);
-		fullField = MakeField("Full Name",patronPanel);
-		emailField = MakeField("E-Mail",patronPanel);
+		nickField = ViewComponents.MakeField("Nick Name",patronPanel);
+		fullField = ViewComponents.MakeField("Full Name",patronPanel);
+		emailField = ViewComponents.MakeField("E-Mail",patronPanel);
 
 		// Button Panel
-		JPanel buttonPanel = MakePanel(4,1,"Buttons");
+		JPanel buttonPanel = ViewComponents.MakePanel(4,1,"Buttons");
 		Insets buttonMargin = new Insets(4, 4, 4, 4);
 
-		finished = MakeButtons("Add Patron",buttonPanel);
-		abort = MakeButtons("Abort",buttonPanel);
+		finished = ViewComponents.MakeButtons("Add Patron",buttonPanel);
+		finished.addActionListener(this);
+		abort = ViewComponents.MakeButtons("Abort",buttonPanel);
+		abort.addActionListener(this);
 
 		// Clean up main panel
 		colPanel.add(patronPanel, "Center");
 		colPanel.add(buttonPanel, "East");
 
-		AddContentsToWindow(win,colPanel);
+		ViewComponents.AddContentsToWindow(win,colPanel);
 		// Center Window on Screen
-		SetWindowPosition(win);
+		ViewComponents.SetWindowPosition(win);
 
 	}
 

@@ -10,6 +10,5 @@ public class drive {
 
 		ControlDeskView cdv = new ControlDeskView( controlDesk, maxPatronsPerParty);
 		ControlDeskSubscriber.subscribe(controlDesk,cdv);
-
 	}
 }

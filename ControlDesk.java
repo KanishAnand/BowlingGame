@@ -106,33 +106,6 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 	}
 
     /**
-     * Allows objects to subscribe as observers
-     * 
-     * @param adding	the ControlDeskObserver that will be subscribed
-     *
-     */
-
-//	public void subscribe(ControlDeskObserver adding) {
-//		subscribers.add(adding);
-//	}
-//
-//    /**
-//     * Broadcast an event to subscribing objects.
-//     *
-//     * @param event	the ControlDeskEvent to broadcast
-//     *
-//     */
-//
-//	public void publish(ControlDeskEvent event) {
-//		for (Object subscriber : subscribers) {
-//			(
-//					(ControlDeskObserver) subscriber)
-//					.receiveControlDeskEvent(
-//							event);
-//		}
-//	}
-
-    /**
      * Accessor method for lanes
      * 
      * @return a HashSet of Lanes

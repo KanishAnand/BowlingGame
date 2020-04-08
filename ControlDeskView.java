@@ -19,7 +19,7 @@ import javax.swing.border.*;
 
 import java.util.*;
 
-public class ControlDeskView  extends ViewComponents implements ActionListener, ControlDeskObserver{
+public class ControlDeskView implements ActionListener, ControlDeskObserver{
 
 	private final JButton addParty,finished,assign;
 	private final JFrame win;
@@ -33,25 +33,27 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 	 */
 
 	public ControlDeskView(ControlDesk controlDesk, int maxMembers) {
-
 		this.controlDesk = controlDesk;
 		this.maxMembers = maxMembers;
 		int numLanes = controlDesk.getNumLanes();
 
-		win = MakeWindow("Control Desk");
+		win = ViewComponents.MakeWindow("Control Desk");
 
-		JPanel colPanel = MakeMainPanel();
+		JPanel colPanel = ViewComponents.MakeMainPanel();
 
 		// Controls Panel
-		JPanel controlsPanel = MakePanel(3,1,"Controls");
+		JPanel controlsPanel = ViewComponents.MakePanel(3,1,"Controls");
 
 		//Buttons
-		addParty = MakeButtons("Add Party",controlsPanel);
-		assign = MakeButtons("Assign Lanes",controlsPanel);
-		finished = MakeButtons("Finished",controlsPanel);
+		addParty = ViewComponents.MakeButtons("Add Party",controlsPanel);
+		addParty.addActionListener(this);
+		assign = ViewComponents.MakeButtons("Assign Lanes",controlsPanel);
+		assign.addActionListener(this);
+		finished = ViewComponents.MakeButtons("Finished",controlsPanel);
+		finished.addActionListener(this);
 
 		// Lane Status Panel
-		JPanel laneStatusPanel = MakePanel(numLanes,1,"Lane Status");
+		JPanel laneStatusPanel = ViewComponents.MakePanel(numLanes,1,"Lane Status");
 
 		HashSet lanes=controlDesk.getLanes();
 		Iterator it = lanes.iterator();
@@ -69,7 +71,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 		}
 
 		// Party Queue Panel
-		JPanel partyPanel = FlowLayoutPanel();
+		JPanel partyPanel = ViewComponents.FlowLayoutPanel();
 		partyPanel.setBorder(new TitledBorder("Party Queue"));
 
 		Vector empty = new Vector();
@@ -88,7 +90,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 		colPanel.add(laneStatusPanel, "Center");
 		colPanel.add(partyPanel, "West");
 
-		AddContentsToWindow(win,colPanel);
+		ViewComponents.AddContentsToWindow(win,colPanel);
 
 		/* Close program when this window closes */
 		win.addWindowListener(new WindowAdapter() {
@@ -98,7 +100,7 @@ public class ControlDeskView  extends ViewComponents implements ActionListener, 
 		});
 
 		// Center Window on Screen
-		SetWindowPosition(win);
+		ViewComponents.SetWindowPosition(win);
 	}
 
 	/**

@@ -3,15 +3,15 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
-abstract class ViewComponents {
-    public JFrame MakeWindow(String st){
+public class ViewComponents {
+    public static JFrame MakeWindow(String st){
         JFrame win = new JFrame("Control Desk");
         win.getContentPane().setLayout(new BorderLayout());
         ((JPanel) win.getContentPane()).setOpaque(false);
         return win;
     }
 
-    public void SetWindowPosition(JFrame win){
+    public static void SetWindowPosition(JFrame win){
         Dimension screenSize = (Toolkit.getDefaultToolkit()).getScreenSize();
         win.setLocation(
                 ((screenSize.width) / 2) - ((win.getSize().width) / 2),
@@ -19,18 +19,18 @@ abstract class ViewComponents {
         win.setVisible(true);
     }
 
-    public void AddContentsToWindow(JFrame win,JPanel colPanel){
+    public static void AddContentsToWindow(JFrame win, JPanel colPanel){
         win.getContentPane().add("Center", colPanel);
         win.pack();
     }
 
-    public JPanel MakeMainPanel(){
+    public static JPanel MakeMainPanel(){
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
         return panel;
     }
 
-    public JPanel MakePanel(int row,int col,String st){
+    public static JPanel MakePanel(int row, int col, String st){
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(row,col));
         panel.setBorder(new TitledBorder(st));
@@ -43,13 +43,13 @@ abstract class ViewComponents {
         return panel;
     }
 
-    public JPanel FlowLayoutPanel(){
+    public static JPanel FlowLayoutPanel(){
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
         return panel;
     }
 
-    public JTextField MakeField(String st,JPanel patronPanel){
+    public static JTextField MakeField(String st, JPanel patronPanel){
         JPanel obj  = new JPanel();
         obj.setLayout((new FlowLayout()));
         JLabel label = new JLabel(st);
@@ -60,11 +60,11 @@ abstract class ViewComponents {
         return text;
     }
 
-    public JButton MakeButtons(String st,JPanel buttonPanel){
+    public static JButton MakeButtons(String st, JPanel buttonPanel){
         JButton btn = new JButton(st);
         JPanel btnPanel = new JPanel();
         btnPanel.setLayout(new FlowLayout());
-        btn.addActionListener((ActionListener) this);
+//        btn.addActionListener((ActionListener) btn);
         btnPanel.add(btn);
         buttonPanel.add(btnPanel);
         return btn;

@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class LaneStatusView extends ViewComponents implements ActionListener, LaneObserver, PinsetterObserver {
+public class LaneStatusView implements ActionListener, LaneObserver, PinsetterObserver {
 
 	public final JPanel jp;
 
@@ -38,7 +38,7 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 		lv = new LaneView( lane, laneNum );
 		LaneSubscriber.subscribe(lane,lv);
 
-		jp = FlowLayoutPanel();
+		jp = ViewComponents.FlowLayoutPanel();
 		JLabel cLabel = new JLabel( "Now Bowling: " );
 		curBowler = new JLabel( "(no one)" );
 		JLabel pdLabel = new JLabel( "Pins Down: " );
@@ -48,10 +48,15 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new FlowLayout());
 
-		viewLane = MakeButtons("View Lane",buttonPanel);
-		viewPinSetter = MakeButtons("Pinsetter",buttonPanel);
-		maintenance = MakeButtons(" ",buttonPanel);
+		viewLane = ViewComponents.MakeButtons("View Lane",buttonPanel);
+		viewLane.addActionListener(this);
+		viewPinSetter = ViewComponents.MakeButtons("Pinsetter",buttonPanel);
+		viewPinSetter.addActionListener(this);
+
+		maintenance = ViewComponents.MakeButtons(" ",buttonPanel);
+        maintenance.addActionListener(this);
 		maintenance.setBackground(Color.GREEN);
+
 
 		viewLane.setEnabled( false );
 		viewPinSetter.setEnabled( false );

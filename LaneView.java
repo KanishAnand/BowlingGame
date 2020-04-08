@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class LaneView extends ViewComponents implements LaneObserver, ActionListener {
+public class LaneView implements LaneObserver, ActionListener {
 
 	private boolean initDone;
 
@@ -91,8 +91,9 @@ public class LaneView extends ViewComponents implements LaneObserver, ActionList
 				cpanel.add(makeFrame(le.getParty()), "Center");
 
 				// Button Panel
-				JPanel buttonPanel = FlowLayoutPanel();
-				maintenance = MakeButtons("Maintenance Call",buttonPanel);
+				JPanel buttonPanel = ViewComponents.FlowLayoutPanel();
+				maintenance = ViewComponents.MakeButtons("Maintenance Call",buttonPanel);
+				maintenance.addActionListener(this);
 
 				cpanel.add(buttonPanel, "South");
 

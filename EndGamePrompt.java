@@ -8,8 +8,9 @@
 
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.text.View;
 
-public class EndGamePrompt extends ViewComponents implements ActionListener {
+public class EndGamePrompt implements ActionListener {
 
 	private final JFrame win;
 	private final JButton yesButton;
@@ -22,31 +23,33 @@ public class EndGamePrompt extends ViewComponents implements ActionListener {
 	public EndGamePrompt( String partyName ) {
 
 		result =0;
-		win = MakeWindow("Another Game for " + partyName + "?" );
+		win = ViewComponents.MakeWindow("Another Game for " + partyName + "?" );
 
-		JPanel colPanel = GridLayoutPanel(2,1);
+		JPanel colPanel = ViewComponents.GridLayoutPanel(2,1);
 
 		// Label Panel
-		JPanel labelPanel = FlowLayoutPanel();
+		JPanel labelPanel = ViewComponents.FlowLayoutPanel();
 		JLabel message = new JLabel( "Party " + partyName
 			+ " has finished bowling.\nWould they like to bowl another game?" );
 
 		labelPanel.add( message );
 
 		// Button
-		JPanel buttonPanel  = GridLayoutPanel(1,2);
+		JPanel buttonPanel  = ViewComponents.GridLayoutPanel(1,2);
 
-		yesButton = MakeButtons("Yes",buttonPanel);
-		noButton = MakeButtons("No",buttonPanel);
+		yesButton = ViewComponents.MakeButtons("Yes",buttonPanel);
+		yesButton.addActionListener(this);
+		noButton = ViewComponents.MakeButtons("No",buttonPanel);
+		noButton.addActionListener(this);
 
 		// Clean up main panel
 		colPanel.add(labelPanel);
 		colPanel.add(buttonPanel);
 
-		AddContentsToWindow(win,colPanel);
+		ViewComponents.AddContentsToWindow(win,colPanel);
 
 		// Center Window on Screen
-		SetWindowPosition(win);
+		ViewComponents.SetWindowPosition(win);
 
 	}
 

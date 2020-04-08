@@ -38,7 +38,7 @@ import java.util.*;
  *  
  */
 
-public class AddPartyView extends ViewComponents implements AddPartyViewInterface,ActionListener, ListSelectionListener {
+public class AddPartyView implements AddPartyViewInterface,ActionListener, ListSelectionListener {
 
 	private final int maxSize;
 
@@ -62,12 +62,12 @@ public class AddPartyView extends ViewComponents implements AddPartyViewInterfac
 		this.controlDesk = controlDesk;
 		maxSize = max;
 
-		win = MakeWindow("Add Party");
+		win = ViewComponents.MakeWindow("Add Party");
 
-		JPanel colPanel =GridLayoutPanel(1,3);
+		JPanel colPanel = ViewComponents.GridLayoutPanel(1,3);
 
 		// Party Panel
-		JPanel partyPanel = FlowLayoutPanel();
+		JPanel partyPanel = ViewComponents.FlowLayoutPanel();
 		partyPanel.setBorder(new TitledBorder("Your Party"));
 
 		party = new Vector();
@@ -103,23 +103,26 @@ public class AddPartyView extends ViewComponents implements AddPartyViewInterfac
 		bowlerPanel.add(bowlerPane);
 
 		// Button Panel
-		JPanel buttonPanel = GridLayoutPanel(4,1);
+		JPanel buttonPanel = ViewComponents.GridLayoutPanel(4,1);
 		Insets buttonMargin = new Insets(4, 4, 4, 4);
 
-		addPatron = MakeButtons("Add to Party",buttonPanel);
-		remPatron = MakeButtons("Remove Member",buttonPanel);
-		newPatron = MakeButtons("New Patron",buttonPanel);
-		finished = MakeButtons("Finished",buttonPanel);
+		addPatron = ViewComponents.MakeButtons("Add to Party",buttonPanel);
+		addPatron.addActionListener(this);
+		remPatron = ViewComponents.MakeButtons("Remove Member",buttonPanel);
+		remPatron.addActionListener(this);
+		newPatron = ViewComponents.MakeButtons("New Patron",buttonPanel);
+		newPatron.addActionListener(this);
+		finished = ViewComponents.MakeButtons("Finished",buttonPanel);
+		finished.addActionListener(this);
 
 		// Clean up main panel
 		colPanel.add(partyPanel);
 		colPanel.add(bowlerPanel);
 		colPanel.add(buttonPanel);
 
-		AddContentsToWindow(win,colPanel);
-
+		ViewComponents.AddContentsToWindow(win,colPanel);
 		// Center Window on Screen
-		SetWindowPosition(win);
+		ViewComponents.SetWindowPosition(win);
 
 	}
 
