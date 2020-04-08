@@ -88,11 +88,9 @@ public class LaneStatusView extends ViewComponents implements ActionListener, La
 			}
 		}
 
-		if (e.getSource().equals(maintenance)) {
-			if (lane.calculateScore.partyAssigned) {
+		if (e.getSource().equals(maintenance) && lane.calculateScore.partyAssigned) {
 				lane.unPauseGame();
 				maintenance.setBackground( Color.GREEN );
-			}
 		}
 	}
 

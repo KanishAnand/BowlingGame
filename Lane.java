@@ -326,15 +326,15 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 		return new LaneEvent(calculateScore.party, bowlIndex, currentThrower, calculateScore.cumulScores, calculateScore.scores, frameNumber+1, ball, gameIsHalted);
 	}
 
-//	/** isPartyAssigned()
-//	 *
-//	 * checks if a party is assigned to this lane
-//	 *
-//	 * @return true if party assigned, false otherwise
-//	 */
-//	public boolean isPartyAssigned() {
-//		return calculateScore.partyAssigned;
-//	}
+	/** isPartyAssigned()
+	 *
+	 * checks if a party is assigned to this lane
+	 *
+	 * @return true if party assigned, false otherwise
+	 */
+	public boolean isPartyAssigned() {
+		return calculateScore.partyAssigned;
+	}
 
 	/**
 	 * Pause the execution of this game
