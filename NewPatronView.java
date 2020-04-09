@@ -18,6 +18,7 @@
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Vector;
 import javax.swing.*;
 import javax.swing.text.View;
 
@@ -77,11 +78,39 @@ public class NewPatronView implements ActionListener {
 			full = fullField.getText();
 			email = emailField.getText();
 			done = true;
-			addParty.updateNewPatron( this );
+//			addParty.updateNewPatron( this );
+			updateNewPatron(this,addParty);
 			win.setVisible(false);
 		}
 
 	}
+
+	/**
+	 * Called by NewPatronView to notify AddPartyView to update
+	 *
+	 * @param newPatron the NewPatronView that called this method
+	 */
+
+	public void updateNewPatron(NewPatronView newPatron,AddPartyView addParty) {
+		try {
+			Bowler checkBowler = BowlerFile.getBowlerInfo( newPatron.getNick() );
+			if ( checkBowler == null ) {
+				BowlerFile.putBowlerInfo(
+						newPatron.getNick(),
+						newPatron.getFull(),
+						newPatron.getEmail());
+				addParty.bowlerdb = new Vector(BowlerFile.getBowlers());
+				addParty.allBowlers.setListData(addParty.bowlerdb);
+				addParty.party.add(newPatron.getNick());
+				addParty.partyList.setListData(addParty.party);
+			} else {
+				System.err.println( "A Bowler with that name already exists." );
+			}
+		} catch (Exception e2) {
+			System.err.println("File I/O Error");
+		}
+	}
+
 
 	public boolean done() {
 		return done;

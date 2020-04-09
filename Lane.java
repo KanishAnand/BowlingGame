@@ -187,10 +187,12 @@ public class Lane extends Thread implements Serializable, PinsetterObserver,Lane
 
 					simulateBallHiting();
 
-					if (frameNumber == 9){
-						calculateScore.finalScores[bowlIndex][gameNumber] = calculateScore.cumulScores[bowlIndex][9];
-						addDate();
-					}
+					checkframenine();
+
+					// if (frameNumber == 9){
+					// 	calculateScore.finalScores[bowlIndex][gameNumber] = calculateScore.cumulScores[bowlIndex][9];
+					// 	addDate();
+					// }
 
 					setter.reset();
 					bowlIndex++;
@@ -235,11 +237,22 @@ public class Lane extends Thread implements Serializable, PinsetterObserver,Lane
 				}
 			}
 			
-			try {
-				sleep(10);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			sleep();
+		}
+	}
+
+	public void checkframenine(){
+		if (frameNumber == 9){
+			calculateScore.finalScores[bowlIndex][gameNumber] = calculateScore.cumulScores[bowlIndex][9];
+			addDate();
+		}
+	}
+
+	public void sleep(){
+		try {
+			sleep(10);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
