@@ -91,7 +91,7 @@ public class LaneView implements Serializable, LaneObserver, ActionListener {
 			}
 		}
 
-		if (le.check == 1) {
+//		if (le.check == 1) {
 			System.out.println("Making the frame.");
 			cpanel.removeAll();
 			cpanel.add(makeFrame(le.getParty()), "Center");
@@ -109,7 +109,7 @@ public class LaneView implements Serializable, LaneObserver, ActionListener {
 
 			cpanel.add(buttonPanel, "South");
 			frame.pack();
-		}
+//		}
 
 		int[][] lescores = le.cumulScore;
 		showScore(le,numBowlers,lescores);

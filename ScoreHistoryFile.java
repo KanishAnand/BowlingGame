@@ -74,8 +74,6 @@ public class ScoreHistoryFile {
 			if (isGeneral || (!isGeneral && score.getNickName().equals(nick))) // isGeneral is a Boolean variable
 			{
 				int intScore = Integer.parseInt(score.getScore());
-				System.out.println(score.getScore());
-				System.out.println(intScore);
 
 				if (intScore > max)
 				{
