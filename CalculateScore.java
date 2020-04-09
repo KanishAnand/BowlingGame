@@ -13,7 +13,6 @@ public class CalculateScore {
         scores = new HashMap();
         partyAssigned = false;
     }
-
     public Party getParty() {
         return party;
     }
@@ -63,9 +62,6 @@ public class CalculateScore {
          return (i < current && i % 2 == 0 && curScore[i] == 10);
     }
 
-    public boolean calculateCurScore34Bool(int[] curScore,int i){
-        return (curScore[i + 3] != -1 || curScore[i + 4] != -1);
-    }
 
     public void calculate18(int bowlIndex,int i,int[] curScore){
          if(i == 18){
@@ -131,7 +127,6 @@ public class CalculateScore {
             //Spare:
             boolean spareBool = calculateSpareBool(curScore,i,current);
             boolean strikeBool = calculateStrikeBool(curScore,i,current);
-            boolean curScore34 = calculateCurScore34Bool(curScore,i);
 
             if (spareBool) {
                 cumulScores[bowlIndex][(i / 2)] += curScore[i + 1] + curScore[i];
@@ -144,7 +139,7 @@ public class CalculateScore {
 
             else if (strikeBool) {
                 if (curScore[i + 2] != -1) {
-                    if (curScore34) {
+                    if (curScore[i + 3] != -1 || curScore[i + 4] != -1) {
                         functionStrike(i,bowlIndex,curScore);
                     }
                     else {
