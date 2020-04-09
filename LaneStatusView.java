@@ -8,9 +8,10 @@
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.Serializable;
 import javax.swing.*;
 
-public class LaneStatusView implements ActionListener, LaneObserver, PinsetterObserver {
+public class LaneStatusView implements Serializable, ActionListener, LaneObserver, PinsetterObserver {
 
 	public final JPanel jp;
 

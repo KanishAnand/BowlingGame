@@ -28,7 +28,7 @@ import java.util.*;
 public class Party implements Serializable {
 
 	/** Vector of bowlers in this party */	
-    private final Vector myBowlers;
+    private Vector myBowlers;
 	
 	/**
 	 * Constructor for a Party
@@ -84,5 +84,35 @@ public class Party implements Serializable {
 		curLane.gameFinished = false;
 		curLane.frameNumber = 0;
 	}
+
+	public void assignPausedParty( Lane curLane , Vector resumeLane) {
+		System.out.println("Entered assign");
+		curLane.setter.rnd = (Random) resumeLane.get(1);
+		curLane.setter.pins  = (boolean[]) resumeLane.get(2);
+		curLane.setter.foul = (boolean) resumeLane.get(3);
+		curLane.setter.throwNumber = (int) resumeLane.get(4);
+
+//		curLane.calculateScore.curScores = new int[((CalculateScore)((resumeLane).get(5))).party.myBowlers.size()];
+//		curLane.calculateScore.finalScores = new int[((CalculateScore)((resumeLane).get(5))).party.myBowlers.size()][128];
+//		curLane.calculateScore.cumulScores = new int[((CalculateScore)((resumeLane).get(5))).party.myBowlers.size()][10];
+
+		curLane.calculateScore = (CalculateScore) resumeLane.get(5);
+		resetBowlerIterator(curLane);
+
+		curLane.gameIsHalted = false;
+
+		curLane.gameFinished = (boolean) resumeLane.get(7);
+		curLane.ball = (int) resumeLane.get(8);
+		curLane.bowlIndex = (int) resumeLane.get(9);
+		curLane.frameNumber = (int) resumeLane.get(10);
+		curLane.tenthFrameStrike = (boolean) resumeLane.get(11);
+		curLane.canThrowAgain = (boolean) resumeLane.get(12);
+		curLane.gameNumber = (int) resumeLane.get(13);
+		curLane.currentThrower = (Bowler) resumeLane.get(14);
+		System.out.println("Exited assign");
+
+	}
+
+
 
 }

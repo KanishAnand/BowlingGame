@@ -23,11 +23,12 @@
  *
  */
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
-public class LaneEvent implements  LaneEventInterface{
+public class LaneEvent implements Serializable, LaneEventInterface{
 
 	private final Party p;
 	final int ball;
@@ -49,12 +50,12 @@ public class LaneEvent implements  LaneEventInterface{
 		frameNum = (int) params.get("frameNumber");
 		ball = (int) params.get("ball");
 		mechProb = (boolean) params.get("gameIsHalted");
-		if (frameNum == 1 && ball == 0 && index == 0) {
+//		if (frameNum == 1 && ball == 0 && index == 0) {
 			check = 1;
-		}
-		else{
-			check = 0;
-		}
+//		}
+//		else{
+//			check = 0;
+//		}
 	}
 
 	public Party getParty() {

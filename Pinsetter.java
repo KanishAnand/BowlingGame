@@ -70,14 +70,15 @@
  *
  */
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Pinsetter {
+public class Pinsetter implements Serializable {
 
-	private final Random rnd;
+	public Random rnd;
 	public final Vector subscribers;
 
-	private final boolean[] pins;
+	public boolean[] pins;
 			/* 0-9 of state of pine, true for standing, 
 			false for knocked down
 
@@ -87,8 +88,8 @@ public class Pinsetter {
 			      0
 
 			*/
-	private boolean foul;
-	private int throwNumber;
+	public boolean foul;
+	public int throwNumber;
 
 	/** sendEvent()
 	 * 
