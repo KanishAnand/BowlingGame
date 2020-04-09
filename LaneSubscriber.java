@@ -1,4 +1,6 @@
-public class LaneSubscriber {
+import java.io.Serializable;
+
+public class LaneSubscriber implements Serializable {
 
 
     /** subscribe

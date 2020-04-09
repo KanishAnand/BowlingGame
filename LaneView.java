@@ -7,9 +7,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.*;
 
-public class LaneView implements LaneObserver, ActionListener {
+public class LaneView implements Serializable, LaneObserver, ActionListener {
 
 	private boolean initDone;
 
@@ -50,6 +51,7 @@ public class LaneView implements LaneObserver, ActionListener {
 		initDone = false;
 		bowlers = party.getMembers();
 		int numBowlers = bowlers.size();
+		System.out.println(numBowlers);
 
 		JPanel panel = new JPanel();
 
@@ -173,18 +175,9 @@ public class LaneView implements LaneObserver, ActionListener {
 			Party party = lane.calculateScore.getParty();
 
 			try {
-				PausedLanesFile.addPausedLane(scores, party);
-				Vector<Party> returnedParty = PausedLanesFile.readPausedLanesParty();
-				Iterator it = returnedParty.iterator();
-				while (it.hasNext()) {
-					Party obj = (Party) it.next();
-					for (Object o: obj.getMembers())
-					{
-						Bowler a = (Bowler) o;
-						System.out.print(a.getNick()+" ");
-					}
-					System.out.println();
-				}
+				PausedLanesFile.addPausedLane(lane);
+//				PausedLanesFile.addPausedLane(scores, party);
+
 			} catch (IOException | ClassNotFoundException ex) {
 				ex.printStackTrace();
 			}

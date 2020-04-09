@@ -17,11 +17,12 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
+import java.io.IOException;
 import java.util.*;
 
 public class ControlDeskView implements ActionListener, ControlDeskObserver{
 
-	private final JButton addParty,finished,assign,query;
+	private final JButton addParty,finished,assign,query,resume;
 	private final JFrame win;
 	private final JList partyList;
 	private final int maxMembers;
@@ -53,7 +54,8 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 		finished.addActionListener(this);
 		query = ViewComponents.MakeButtons("Query",controlsPanel);
 		query.addActionListener(this);
-
+		resume = ViewComponents.MakeButtons("Resume",controlsPanel);
+		resume.addActionListener(this);
 		// Lane Status Panel
 		JPanel laneStatusPanel = ViewComponents.MakePanel(numLanes,1,"Lane Status");
 
@@ -116,15 +118,45 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 		if (e.getSource().equals(addParty)) {
 			AddPartyView addPartyWin = new AddPartyView(this, maxMembers);
 		}
-		if (e.getSource().equals(assign)) {
+		else if (e.getSource().equals(assign)) {
 			PartyQueue.assignLane(controlDesk);
 		}
-		if (e.getSource().equals(finished)) {
+		else if (e.getSource().equals(finished)) {
 			win.setVisible(false);
 			System.exit(0);
 		}
-		if (e.getSource().equals(query)) {
+		else if (e.getSource().equals(query)) {
 			QueryView queryview = new QueryView();
+		}
+		else if (e.getSource().equals(resume)) {
+			try {
+				ResumeView resumeView = new ResumeView(controlDesk);
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			} catch (ClassNotFoundException ex) {
+				ex.printStackTrace();
+			}
+//			try {
+//
+//				Vector<Boolean> returnedFlags = PausedLanesFile.readPausedLanesFlags();
+//				Vector<Party> returnedParties = PausedLanesFile.readPausedLanesParties();
+//				Vector<HashMap> returnedScores = PausedLanesFile.readPausedLanesScores();
+//
+//
+//			} catch (IOException ex) {
+//				ex.printStackTrace();
+//			} catch (ClassNotFoundException ex) {
+//				ex.printStackTrace();
+//			}
+//			Iterator it = returnedParty.iterator();
+//			while (it.hasNext()) {
+//				Party obj = (Party) it.next();
+//				for (Object o: obj.getMembers())
+//				{
+//					Bowler a = (Bowler) o;
+//					System.out.print(a.getNick()+" ");
+//				}
+//				System.out.println();
 		}
 	}
 
