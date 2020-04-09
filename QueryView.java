@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Vector;
 
-public class QueryView extends ViewComponents implements ActionListener, ListSelectionListener {
+public class QueryView implements ActionListener, ListSelectionListener {
     private final JFrame win;
     private Vector bowlerdb;
     private final JList partyList;

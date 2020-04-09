@@ -177,40 +177,29 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	public void run() {
 		
 		while (true) {
+
 			if (calculateScore.partyAssigned && !gameFinished) {	// we have a party on this lane,
 								// so next bower can take a throw
-				while (gameIsHalted) {
-					try {
-						sleep(10);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
+				checkGameHalted();
 
 				if (bowlerIterator.hasNext()) {
 					currentThrower = (Bowler)bowlerIterator.next();
 					canThrowAgain = true;
 					tenthFrameStrike = false;
 					ball = 0;
-					while (canThrowAgain) {
-						setter.ballThrown();		// simulate the thrower's ball hiting
-						ball++;
-					}
-					
+
+					simulateBallHiting();
+
 					if (frameNumber == 9){
 						calculateScore.finalScores[bowlIndex][gameNumber] = calculateScore.cumulScores[bowlIndex][9];
-						try{
-						Date date = new Date();
-						String dateString = "" + date.getHours() + ":" + date.getMinutes() + " " + date.getMonth() + "/" + date.getDay() + "/" + (date.getYear() + 1900);
-						ScoreHistoryFile.addScore(currentThrower.getNick(), dateString, Integer.toString(calculateScore.cumulScores[bowlIndex][9]));
-						} catch (Exception e) {System.err.println("Exception in addScore. "+ e );} 
+						addDate();
 					}
 
-					
 					setter.reset();
 					bowlIndex++;
-					
-				} else {
+				}
+
+				else {
 					frameNumber++;
 					calculateScore.party.resetBowlerIterator(this);
 					bowlIndex = 0;
@@ -219,48 +208,35 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 						gameNumber++;
 					}
 				}
-			} else if (calculateScore.partyAssigned) {
-				EndGamePrompt egp = new EndGamePrompt( ((Bowler) calculateScore.party.getMembers().get(0)).getNickName() + "'s Party" );
+			}
+
+			else if(calculateScore.partyAssigned){
+				String partyName = ((Bowler) calculateScore.party.getMembers().get(0)).getNickName() + "'s Party";
+				EndGamePrompt egp = new EndGamePrompt(partyName);
 				int result = egp.getResult();
 				egp.distroy();
 
-
 				System.out.println("result was: " + result);
-				
+
 				// TODO: send record of scores to control desk
 				if (result == 1) {					// yes, want to play again
 					calculateScore.resetScores(calculateScore.party);
 					gameFinished = false;
 					frameNumber = 0;
 					calculateScore.party.resetBowlerIterator(this);
-					
-				} else if (result == 2) {// no, dont want to play another game
-					Vector printVector;	
-					EndGameReport egr = new EndGameReport( ((Bowler)calculateScore.party.getMembers().get(0)).getNickName() + "'s Party", calculateScore.party);
+				}
+				else if (result == 2) {// no, dont want to play another game
+					Vector printVector;
+					EndGameReport egr = new EndGameReport( partyName, calculateScore.party);
 					printVector = egr.getResult();
 					calculateScore.partyAssigned = false;
 					Iterator scoreIt = calculateScore.party.getMembers().iterator();
 					calculateScore.party = null;
 					calculateScore.partyAssigned = false;
-					
 					LaneSubscriber.publish(this,lanePublish());
-					
-					int myIndex = 0;
-					while (scoreIt.hasNext()){
-						Bowler thisBowler = (Bowler)scoreIt.next();
-						ScoreReport sr = new ScoreReport( thisBowler, calculateScore.finalScores[myIndex++], gameNumber );
-						sr.sendEmail(thisBowler.getEmail());
-						for (Object o : printVector) {
-							if (thisBowler.getNick() == o) {
-								System.out.println("Printing " + thisBowler.getNick());
-								sr.sendPrintout();
-							}
-						}
-
-					}
+					sendScore(scoreIt,printVector);
 				}
 			}
-			
 			
 			try {
 				sleep(10);
@@ -268,6 +244,46 @@ public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public void sendScore(Iterator scoreIt,Vector printVector){
+		int myIndex = 0;
+		while (scoreIt.hasNext()){
+			Bowler thisBowler = (Bowler)scoreIt.next();
+			ScoreReport sr = new ScoreReport( thisBowler, calculateScore.finalScores[myIndex++], gameNumber );
+			sr.sendEmail(thisBowler.getEmail());
+			for (Object o : printVector) {
+				if (thisBowler.getNick() == o) {
+					System.out.println("Printing " + thisBowler.getNick());
+					sr.sendPrintout();
+				}
+			}
+		}
+	}
+
+	public void simulateBallHiting(){
+		while (canThrowAgain) {
+			setter.ballThrown();		// simulate the thrower's ball hiting
+			ball++;
+		}
+	}
+
+	public void checkGameHalted(){
+		while (gameIsHalted) {
+			try {
+				sleep(10);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void addDate(){
+		try{
+			Date date = new Date();
+			String dateString = "" + date.getHours() + ":" + date.getMinutes() + " " + date.getMonth() + "/" + date.getDay() + "/" + (date.getYear() + 1900);
+			ScoreHistoryFile.addScore(currentThrower.getNick(), dateString, Integer.toString(calculateScore.cumulScores[bowlIndex][9]));
+		} catch (Exception e) {System.err.println("Exception in addScore. "+ e );}
 	}
 	
 	/** recievePinsetterEvent()
