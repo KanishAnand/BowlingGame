@@ -5,7 +5,7 @@ import java.util.Vector;
 public interface AddPartyViewInterface {
     void actionPerformed(ActionEvent e);
     void valueChanged(ListSelectionEvent e);
-    Vector getNames();
+//    Vector getNames();
     void updateNewPatron(NewPatronView newPatron);
-    Vector getParty();
+//    Vector getParty();
 }

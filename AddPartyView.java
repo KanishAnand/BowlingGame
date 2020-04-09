@@ -43,18 +43,11 @@ public class AddPartyView implements AddPartyViewInterface,ActionListener, ListS
 	private final int maxSize;
 
 	private final JFrame win;
-	private final JButton addPatron;
-	private final JButton newPatron;
-	private final JButton remPatron;
-	private final JButton finished;
-	private final JList partyList;
-	private final JList allBowlers;
-	private final Vector party;
+	private final JButton addPatron,newPatron,remPatron,finished;
+	private final JList partyList,allBowlers;
+	public final Vector party;
 	private Vector bowlerdb;
-	private Integer lock;
-
 	private final ControlDeskView controlDesk;
-
 	private String selectedNick, selectedMember;
 
 	public AddPartyView(ControlDeskView controlDesk, int max) {
@@ -79,7 +72,6 @@ public class AddPartyView implements AddPartyViewInterface,ActionListener, ListS
 		partyList.setVisibleRowCount(6);
 		partyList.addListSelectionListener(this);
 		JScrollPane partyPane = new JScrollPane(partyList);
-		//        partyPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		partyPanel.add(partyPane);
 
 		// Bowler Database
@@ -104,7 +96,6 @@ public class AddPartyView implements AddPartyViewInterface,ActionListener, ListS
 
 		// Button Panel
 		JPanel buttonPanel = ViewComponents.GridLayoutPanel(4,1);
-		Insets buttonMargin = new Insets(4, 4, 4, 4);
 
 		addPatron = ViewComponents.MakeButtons("Add to Party",buttonPanel);
 		addPatron.addActionListener(this);
@@ -137,6 +128,7 @@ public class AddPartyView implements AddPartyViewInterface,ActionListener, ListS
 				}
 			}
 		}
+
 		if (e.getSource().equals(remPatron)) {
 			if (selectedMember != null) {
 				party.removeElement(selectedMember);
@@ -152,7 +144,6 @@ public class AddPartyView implements AddPartyViewInterface,ActionListener, ListS
 			}
 			win.setVisible(false);
 		}
-
 	}
 
 /**
@@ -169,14 +160,6 @@ public class AddPartyView implements AddPartyViewInterface,ActionListener, ListS
 			selectedMember =
 				((String) ((JList) e.getSource()).getSelectedValue());
 		}
-	}
-
-/**
- * Accessor for Party
- */
-
-	public Vector getNames() {
-		return party;
 	}
 
 /**
@@ -205,12 +188,12 @@ public class AddPartyView implements AddPartyViewInterface,ActionListener, ListS
 		}
 	}
 
-/**
- * Accessor for Party
- */
-
-	public Vector getParty() {
-		return party;
-	}
+///**
+// * Accessor for Party
+// */
+//
+//	public Vector getParty() {
+//		return party;
+//	}
 
 }
