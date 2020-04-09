@@ -73,16 +73,23 @@ public class QueryView implements ActionListener, ListSelectionListener {
         ViewComponents.SetWindowPosition(win);
     }
 
+    public Vector getHighestAndLowestCaller(String selectedNick, Boolean isGeneral)
+    {
+        Vector returnVector = new Vector<>();
+        try {
+            returnVector =  ScoreHistoryFile.getHighestAndLowest(selectedNick, isGeneral);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return returnVector;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(highestplayer)) {
             if (selectedNick != null) {
-                Vector returnedVector = null;
-                try {
-                    returnedVector = ScoreHistoryFile.getHighestAndLowest(selectedNick,false);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+                Vector returnedVector = getHighestAndLowestCaller(selectedNick, false);
 
                 Vector<String> partyVector = new Vector<>();
                 partyVector.add("Player: " + selectedNick);
@@ -92,12 +99,7 @@ public class QueryView implements ActionListener, ListSelectionListener {
         }
         else if (e.getSource().equals(lowestplayer)) {
             if (selectedNick != null) {
-                Vector returnedVector = null;
-                try {
-                    returnedVector = ScoreHistoryFile.getHighestAndLowest(selectedNick,false);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
+                Vector returnedVector = getHighestAndLowestCaller(selectedNick, false);
 
                 Vector<String> partyVector = new Vector<>();
                 partyVector.add("Player: " + selectedNick);
@@ -106,12 +108,7 @@ public class QueryView implements ActionListener, ListSelectionListener {
             }
         }
         else if (e.getSource().equals(highestoverall)) {
-            Vector returnedVector = null;
-            try {
-                returnedVector = ScoreHistoryFile.getHighestAndLowest("",true);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+            Vector returnedVector = getHighestAndLowestCaller(selectedNick, true);
 
             Vector<String> partyVector = new Vector<>();
             partyVector.add("Highest overall:");
@@ -120,12 +117,7 @@ public class QueryView implements ActionListener, ListSelectionListener {
             partyList.setListData(partyVector);
         }
         else if (e.getSource().equals(lowestoverall)) {
-            Vector returnedVector = null;
-            try {
-                returnedVector = ScoreHistoryFile.getHighestAndLowest("",true);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+            Vector returnedVector = getHighestAndLowestCaller(selectedNick, true);
 
             Vector<String> partyVector = new Vector<>();
             partyVector.add("Lowest overall:");
