@@ -14,7 +14,7 @@ public class QueryView implements ActionListener, ListSelectionListener {
     private final JList partyList;
     private final JList allBowlers;
     private final JButton highestplayer, lowestplayer, highestoverall, lowestoverall, average;
-    private String selectedNick;
+    private String selectedNick, selectedMember;
 
 
     public QueryView(){
@@ -134,14 +134,12 @@ public class QueryView implements ActionListener, ListSelectionListener {
             partyList.setListData(partyVector);
         }
         else if (e.getSource().equals(average)) {
-            if (selectedNick != null) {
-                double averagevalue;
-                averagevalue = ScoreHistoryFile.averageScore(selectedNick);
-                Vector<String> partyVector = new Vector<>();
-                partyVector.add("Player: " + selectedNick);
-                partyVector.add("Average score: " + Double.toString(averagevalue));
-                partyList.setListData(partyVector);
-            }
+            double averagevalue;
+            averagevalue = ScoreHistoryFile.averageScore(selectedNick);
+            Vector<String> partyVector = new Vector<>();
+            partyVector.add("Player: " + selectedNick);
+            partyVector.add("Average score: " + Double.toString(averagevalue));
+            partyList.setListData(partyVector);
         }
     }
 

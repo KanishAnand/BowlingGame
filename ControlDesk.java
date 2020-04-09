@@ -50,9 +50,6 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 	/** The party wait queue */
 	public final Queue partyQueue;
 
-	/** The resume queue */
-	public Queue pausePartyQueue;
-
 	/** The number of lanes represented */
 	private final int numLanes;
 	
@@ -70,7 +67,6 @@ class ControlDesk extends Thread implements ControlDeskInterface{
 		this.numLanes = numLanes;
 		lanes = new HashSet(numLanes);
 		partyQueue = new Queue();
-		pausePartyQueue = new Queue();
 
 		subscribers = new Vector();
 

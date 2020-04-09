@@ -23,12 +23,11 @@
  *
  */
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
-public class LaneEvent implements Serializable, LaneEventInterface{
+public class LaneEvent implements  LaneEventInterface{
 
 	private final Party p;
 	final int ball;

@@ -131,24 +131,26 @@
  * 
  */
 
-import java.io.Serializable;
 import java.util.*;
 
-public class Lane extends Thread implements Serializable, PinsetterObserver,LaneInterface{
+public class Lane extends Thread implements PinsetterObserver,LaneInterface{
 	public final Pinsetter setter;
 	public final Vector subscribers;
 
 	public CalculateScore calculateScore;
 	
-	public boolean gameIsHalted;
+	private boolean gameIsHalted;
 	public boolean gameFinished;
 	public Iterator bowlerIterator;
-	public int ball;
+	private int ball;
 	public int bowlIndex;
 	public int frameNumber;
-	public boolean tenthFrameStrike;
-	public boolean canThrowAgain;
+	private boolean tenthFrameStrike;
+
+	private boolean canThrowAgain;
+	
 	public int gameNumber;
+	
 	public Bowler currentThrower;			// = the thrower who just took a throw
 
 	/** Lane()
@@ -179,7 +181,7 @@ public class Lane extends Thread implements Serializable, PinsetterObserver,Lane
 			if (calculateScore.partyAssigned && !gameFinished) {	// we have a party on this lane,
 								// so next bower can take a throw
 				checkGameHalted();
-				System.out.println("Check passed");
+
 				if (bowlerIterator.hasNext()) {
 					currentThrower = (Bowler)bowlerIterator.next();
 					canThrowAgain = true;
@@ -249,7 +251,7 @@ public class Lane extends Thread implements Serializable, PinsetterObserver,Lane
 		while (scoreIt.hasNext()){
 			Bowler thisBowler = (Bowler)scoreIt.next();
 			ScoreReport sr = new ScoreReport( thisBowler, calculateScore.finalScores[myIndex++], gameNumber );
-//			sr.sendEmail(thisBowler.getEmail());
+			sr.sendEmail(thisBowler.getEmail());
 			for (Object o : printVector) {
 				if (thisBowler.getNick() == o) {
 					System.out.println("Printing " + thisBowler.getNick());

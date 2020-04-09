@@ -19,17 +19,6 @@ public class PartyQueue {
                 ((Party) controlDesk.partyQueue.next()).assignParty(curLane);
             }
         }
-
-        while (it.hasNext() && controlDesk.pausePartyQueue.hasMoreElements()) {
-            Lane curLane = (Lane) it.next();
-
-            if (!curLane.calculateScore.partyAssigned) {
-                System.out.println("ok... assigning this party");
-                Vector queueElement = (Vector) controlDesk.pausePartyQueue.next();
-
-                ((Party)queueElement.get(0)).assignPausedParty(curLane, (Vector) queueElement.get(1));
-            }
-        }
         ControlDeskSubscriber.publish(controlDesk,new ControlDeskEvent(PartyQueue.getPartyQueue(controlDesk)));
     }
 
@@ -48,14 +37,6 @@ public class PartyQueue {
         }
         Party newParty = new Party(partyBowlers);
         controlDesk.partyQueue.add(newParty);
-        ControlDeskSubscriber.publish(controlDesk,new ControlDeskEvent(getPartyQueue(controlDesk)));
-    }
-
-    public static void resumePartyQueue(ControlDesk controlDesk, Vector lane) {
-        Vector v = new Vector<>();
-        v.add(((CalculateScore)(lane.get(5))).party);
-        v.add(lane);
-        controlDesk.pausePartyQueue.add(v);
         ControlDeskSubscriber.publish(controlDesk,new ControlDeskEvent(getPartyQueue(controlDesk)));
     }
 

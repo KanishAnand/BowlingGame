@@ -1,7 +1,6 @@
-import java.io.Serializable;
 import java.util.HashMap;
 
-public class CalculateScore implements Serializable {
+public class CalculateScore {
     public final HashMap scores;
     public Party party;
     public boolean partyAssigned;
