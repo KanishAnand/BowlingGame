@@ -8,7 +8,6 @@ public class CalculateScore {
     public int[][] cumulScores;
     public int[][] finalScores;
 
-
     public CalculateScore(){
 
         scores = new HashMap();
@@ -56,6 +55,58 @@ public class CalculateScore {
         LaneSubscriber.publish(lane,lane.lanePublish());
     }
 
+    public boolean calculateSpareBool(int[] curScore,int i,int current){
+         return (i % 2 == 1 && curScore[i - 1] + curScore[i] == 10 && i < current - 1);
+    }
+
+    public boolean calculateStrikeBool(int[] curScore,int i,int current){
+         return (i < current && i % 2 == 0 && curScore[i] == 10);
+    }
+
+    public boolean calculateCurScore34Bool(int[] curScore,int i){
+        return (curScore[i + 3] != -1 || curScore[i + 4] != -1);
+    }
+
+    public void calculate18(int bowlIndex,int i,int[] curScore){
+         if(i == 18){
+            cumulScores[bowlIndex][9] += cumulScores[bowlIndex][8] + curScore[i];
+        }
+        else if (i > 18) {
+            cumulScores[bowlIndex][9] += curScore[i];
+        }
+    }
+
+    public void functionStrike(int i,int bowlIndex,int[] curScore){
+        cumulScores[bowlIndex][i / 2] += 10;
+        if (curScore[i + 1] != -1) {
+            cumulScores[bowlIndex][i / 2] += curScore[i + 1] + curScore[i + 2] + cumulScores[bowlIndex][(i / 2) - 1];
+        }
+        else {
+            cumulScores[bowlIndex][i / 2] += curScore[i + 2];
+            if (i / 2 > 0) {
+                cumulScores[bowlIndex][i / 2] += cumulScores[bowlIndex][(i / 2) - 1];
+            }
+
+            if (curScore[i + 3] != -1) {
+                cumulScores[bowlIndex][(i / 2)] += curScore[i + 3];
+            } else {
+                cumulScores[bowlIndex][(i / 2)] += curScore[i + 4];
+            }
+        }
+    }
+
+    public void functionNormalThrow(int i,int bowlIndex,int[] curScore){
+        if(i == 0){
+            cumulScores[bowlIndex][i / 2] += curScore[i];
+        }
+        else if (i % 2 == 0) {
+            cumulScores[bowlIndex][i / 2] += cumulScores[bowlIndex][i / 2 - 1] + curScore[i];
+        }
+        else if (curScore[i] != -1) {
+            cumulScores[bowlIndex][i / 2] += curScore[i];
+        }
+    }
+
     /** getScore()
      *
      * Method that calculates a bowlers score
@@ -78,41 +129,23 @@ public class CalculateScore {
 
         for (int i = 0; i != current + 2; i++) {
             //Spare:
-            if (i % 2 == 1 && curScore[i - 1] + curScore[i] == 10 && i < current - 1) {
+            boolean spareBool = calculateSpareBool(curScore,i,current);
+            boolean strikeBool = calculateStrikeBool(curScore,i,current);
+            boolean curScore34 = calculateCurScore34Bool(curScore,i);
+
+            if (spareBool) {
                 cumulScores[bowlIndex][(i / 2)] += curScore[i + 1] + curScore[i];
             }
 
-            else if(i == 18){
-                cumulScores[bowlIndex][9] += cumulScores[bowlIndex][8] + curScore[i];
+            else if(i >= 18){
+                calculate18(bowlIndex,i,curScore);
             }
 
-            else if (i > 18) {
-                cumulScores[bowlIndex][9] += curScore[i];
-            }
 
-            else if (i < current && i % 2 == 0 && curScore[i] == 10) {
+            else if (strikeBool) {
                 if (curScore[i + 2] != -1) {
-                    if (curScore[i + 3] != -1 || curScore[i + 4] != -1) {
-                        //Still got em.
-                        //Add up the strike.
-                        //Add the next two bals to the current cumulscore.
-                        cumulScores[bowlIndex][i / 2] += 10;
-
-                        if (curScore[i + 1] != -1) {
-                            cumulScores[bowlIndex][i / 2] += curScore[i + 1] + curScore[i + 2] + cumulScores[bowlIndex][(i / 2) - 1];
-                        }
-                        else {
-                            cumulScores[bowlIndex][i / 2] += curScore[i + 2];
-                            if (i / 2 > 0) {
-                                cumulScores[bowlIndex][i / 2] += cumulScores[bowlIndex][(i / 2) - 1];
-                            }
-
-                            if (curScore[i + 3] != -1) {
-                                cumulScores[bowlIndex][(i / 2)] += curScore[i + 3];
-                            } else {
-                                cumulScores[bowlIndex][(i / 2)] += curScore[i + 4];
-                            }
-                        }
+                    if (curScore34) {
+                        functionStrike(i,bowlIndex,curScore);
                     }
                     else {
                         break;
@@ -125,16 +158,7 @@ public class CalculateScore {
 
             else {
                 //We're dealing with a normal throw, add it and be on our way.
-                if(i == 0){
-                    cumulScores[bowlIndex][i / 2] += curScore[i];
-                }
-                else if (i % 2 == 0) {
-                    cumulScores[bowlIndex][i / 2] += cumulScores[bowlIndex][i / 2 - 1] + curScore[i];
-                }
-                else if (curScore[i] != -1) {
-                    cumulScores[bowlIndex][i / 2] += curScore[i];
-                }
-
+                functionNormalThrow(i,bowlIndex,curScore);
             }
         }
     }
