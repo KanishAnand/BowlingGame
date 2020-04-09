@@ -90,10 +90,10 @@ public class ScoreHistoryFile {
 			}
 		}
 
-		Vector<String> toreturn = new Vector<>();
-		toreturn.add(Integer.toString(max));
+		Vector toreturn = new Vector<>();
+		toreturn.add(max);
 		toreturn.add(bestplayer);
-		toreturn.add(Integer.toString(min));
+		toreturn.add(min);
 		toreturn.add(worstplayer);
 
 		return toreturn;

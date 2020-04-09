@@ -86,7 +86,7 @@ public class QueryView implements ActionListener, ListSelectionListener {
 
                 Vector<String> partyVector = new Vector<>();
                 partyVector.add("Player: " + selectedNick);
-                partyVector.add(("Highest:" + returnedVector.get(0)));
+                partyVector.add(("Highest: " + returnedVector.get(0)));
                 partyList.setListData(partyVector);
             }
         }
@@ -101,7 +101,7 @@ public class QueryView implements ActionListener, ListSelectionListener {
 
                 Vector<String> partyVector = new Vector<>();
                 partyVector.add("Player: " + selectedNick);
-                partyVector.add(("Lowest:" + returnedVector.get(2)));
+                partyVector.add(("Lowest: " + returnedVector.get(2)));
                 partyList.setListData(partyVector);
             }
         }
@@ -137,9 +137,10 @@ public class QueryView implements ActionListener, ListSelectionListener {
             if (selectedNick != null) {
                 double averagevalue;
                 averagevalue = ScoreHistoryFile.averageScore(selectedNick);
+                averagevalue = Math.round(averagevalue*100.0)/100.0;
                 Vector<String> partyVector = new Vector<>();
                 partyVector.add("Player: " + selectedNick);
-                partyVector.add("Average score: " + Double.toString(averagevalue));
+                partyVector.add("Average score: " + averagevalue);
                 partyList.setListData(partyVector);
             }
         }
