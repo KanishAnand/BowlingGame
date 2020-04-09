@@ -307,14 +307,9 @@ public class Lane extends Thread implements Serializable, PinsetterObserver,Lane
 							tenthFrameStrike = true;
 						}
 					}
-				
-					if ((pe.totalPinsDown() != 10) && (pe.getThrowNumber() == 2 && !tenthFrameStrike)) {
-						canThrowAgain = false;
-					}
-				
-					if (pe.getThrowNumber() == 3) {
-						canThrowAgain = false;
-					}
+
+					checkThrowAgain(pe);
+
 				} else { // its not the 10th frame
 			
 					if (pe.pinsDownOnThisThrow() == 10) {		// threw a strike
@@ -325,6 +320,15 @@ public class Lane extends Thread implements Serializable, PinsetterObserver,Lane
 						System.out.println("I'm here...");
 				}
 			}  //  this is not a real throw, probably a reset
+	}
+
+	public void checkThrowAgain(PinsetterEvent pe){
+		if ((pe.totalPinsDown() != 10) && (pe.getThrowNumber() == 2 && !tenthFrameStrike)) {
+			canThrowAgain = false;
+		}
+		if (pe.getThrowNumber() == 3) {
+			canThrowAgain = false;
+		}
 	}
 
 	/** lanePublish()
