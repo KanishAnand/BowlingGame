@@ -173,9 +173,8 @@ public class Lane extends Thread implements Serializable, PinsetterObserver,Lane
 	 * entry point for execution of this lane 
 	 */
 	public void run() {
-		
+	
 		while (true) {
-
 			if (calculateScore.partyAssigned && !gameFinished) {	// we have a party on this lane,
 								// so next bower can take a throw
 				checkGameHalted();
