@@ -17,7 +17,7 @@ public class CalculateScore implements Serializable {
     public Party getParty() {
         return party;
     }
-
+    
     public HashMap getScores() {
         return scores;
     }
