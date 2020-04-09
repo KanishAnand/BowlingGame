@@ -15,6 +15,14 @@ public class CalculateScore {
         partyAssigned = false;
     }
 
+    public Party getParty() {
+        return party;
+    }
+
+    public HashMap getScores() {
+        return scores;
+    }
+
     /** resetScores()
      *
      * resets the scoring mechanism, must be called before scoring starts

@@ -6,6 +6,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.io.IOException;
 import java.util.*;
 
 public class LaneView implements LaneObserver, ActionListener {
@@ -20,7 +21,7 @@ public class LaneView implements LaneObserver, ActionListener {
 	JLabel[][] ballLabel,scoreLabel;
 	JPanel[] pins;
 
-	JButton maintenance;
+	JButton maintenance, pause, resume, save;
 	final Lane lane;
 
 	public LaneView(Lane lane, int laneNum) {
@@ -97,6 +98,12 @@ public class LaneView implements LaneObserver, ActionListener {
 			JPanel buttonPanel = ViewComponents.FlowLayoutPanel();
 			maintenance = ViewComponents.MakeButtons("Maintenance Call",buttonPanel);
 			maintenance.addActionListener(this);
+			pause = ViewComponents.MakeButtons("Pause",buttonPanel);
+			pause.addActionListener(this);
+			resume = ViewComponents.MakeButtons("Resume",buttonPanel);
+			resume.addActionListener(this);
+			save = ViewComponents.MakeButtons("Save Game",buttonPanel);
+			save.addActionListener(this);
 
 			cpanel.add(buttonPanel, "South");
 			frame.pack();
@@ -153,6 +160,34 @@ public class LaneView implements LaneObserver, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(maintenance)) {
 			lane.pauseGame();
+		}
+		else if (e.getSource().equals(pause)) {
+			lane.pauseGame();
+		}
+		else if (e.getSource().equals(resume)) {
+			lane.unPauseGame();
+		}
+		else if (e.getSource().equals(save)) {
+			lane.pauseGame();
+			HashMap scores=lane.calculateScore.scores;
+			Party party = lane.calculateScore.getParty();
+
+			try {
+				PausedLanesFile.addPausedLane(scores, party);
+				Vector<Party> returnedParty = PausedLanesFile.readPausedLanesParty();
+				Iterator it = returnedParty.iterator();
+				while (it.hasNext()) {
+					Party obj = (Party) it.next();
+					for (Object o: obj.getMembers())
+					{
+						Bowler a = (Bowler) o;
+						System.out.print(a.getNick()+" ");
+					}
+					System.out.println();
+				}
+			} catch (IOException | ClassNotFoundException ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 
