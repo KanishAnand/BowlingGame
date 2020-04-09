@@ -75,6 +75,19 @@ in the same file itself so I created different files for subscribing and publish
 47. Make A new file for Setting rows of Pinsetter because it involved different type of spacing in various rows so I made different file `PinSetterRows` so that we can edit that directly.
 48. `LaneEvent` was taking alot of parameters to decrease them I split function and removed some useless parameters and then I encapsulated remaining with help of map. Like some of parameters were replaced by just one 
 object of class created by me `CalculateScore`.
+49. In `LaneEvent` we were checking a condition `if (frameNum == 1 && ball == 0 && index == 0)` but in function `recieveLaneEvent` but this condition was increasing complexity due to being a 3 conditional
+condition so I replace it with a `if(check == 1)` where I set value of check in constructor itself by `if (frameNum == 1 && ball == 0 && index == 0) { 
+                                                                                                      			check = 1;
+                                                                                                      		}
+                                                                                                      		else{
+                                                                                                      			check = 0;
+                                                                                                      		}` and this is logically correct also becasue frameNum,ball and index were final variables 
+i.e their values were constant so we can easily do this.
+50. In `LaneEvent` there was a nested for loop in which unecessary calculations were done ex: `((int[]) le.score.get(bowlers.get(k)))[i]` this expressions value was used 4 times in loop so it was calculated 4 times
+and was not stored so I simply stored it in a variable by `int val = ((int[]) le.score.get(bowlers.get(k)))[i];`. Also there were some more minor repeated calculations which  could be easily replaced by one
+by just introducing one variable so I did that and also split that function into two parts because same function was doing two different things one to set Ball Label and one to set Score Label.
+                                                                                       
+                                                		
 
 
  

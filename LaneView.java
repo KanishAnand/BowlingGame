@@ -74,52 +74,80 @@ public class LaneView implements LaneObserver, ActionListener {
 	}
 
 	public void receiveLaneEvent(LaneEvent le) {
-		if (lane.calculateScore.partyAssigned) {
-			int numBowlers = le.getPartyMembers().size();
-			while (!initDone) {
-				try {
-					Thread.sleep(1);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
+		if (!lane.calculateScore.partyAssigned) {
+			return;
+		}
 
-			if (le.frameNum == 1 && le.ball == 0 && le.index == 0) {
-				System.out.println("Making the frame.");
-				cpanel.removeAll();
-				cpanel.add(makeFrame(le.getParty()), "Center");
+		int numBowlers = le.getPartyMembers().size();
 
-				// Button Panel
-				JPanel buttonPanel = ViewComponents.FlowLayoutPanel();
-				maintenance = ViewComponents.MakeButtons("Maintenance Call",buttonPanel);
-				maintenance.addActionListener(this);
-
-				cpanel.add(buttonPanel, "South");
-				frame.pack();
-			}
-
-			int[][] lescores = le.cumulScore;
-
-			for (int k = 0; k < numBowlers; k++) {
-				for (int i = 0; i <= le.frameNum - 1; i++) {
-					if (lescores[k][i] != 0)
-						scoreLabel[k][i].setText(
-							(Integer.valueOf(lescores[k][i])).toString());
-				}
-
-				for (int i = 0; i < 21; i++) {
-					if (((int[]) le.score.get(bowlers.get(k)))[i] != -1)
-						if (((int[]) le.score.get(bowlers.get(k)))[i] == 10 && (i % 2 == 0 || i == 19))
-							ballLabel[k][i].setText("X");
-						else if (i > 0 && ((int[]) le.score.get(bowlers.get(k)))[i] + ((int[]) le.score.get(bowlers.get(k)))[i - 1] == 10 && i % 2 == 1)
-							ballLabel[k][i].setText("/");
-						else if ( ((int[]) le.score.get(bowlers.get(k)))[i] == -2 ){
-							ballLabel[k][i].setText("F");
-						} else
-							ballLabel[k][i].setText((Integer.valueOf(((int[]) le.score.get(bowlers.get(k)))[i])).toString());
-				}
+		while (!initDone) {
+			try {
+				Thread.sleep(1);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
+
+		if (le.check == 1) {
+			System.out.println("Making the frame.");
+			cpanel.removeAll();
+			cpanel.add(makeFrame(le.getParty()), "Center");
+
+			// Button Panel
+			JPanel buttonPanel = ViewComponents.FlowLayoutPanel();
+			maintenance = ViewComponents.MakeButtons("Maintenance Call",buttonPanel);
+			maintenance.addActionListener(this);
+
+			cpanel.add(buttonPanel, "South");
+			frame.pack();
+		}
+
+		int[][] lescores = le.cumulScore;
+		showScore(le,numBowlers,lescores);
+	}
+
+	public void showScore(LaneEvent le,int numBowlers,int[][] lescores){
+		for (int k = 0; k < numBowlers; k++) {
+			setScoreLabel(le,lescores,k);
+			setBallLabel(le,k);
+		}
+	}
+
+	public void setScoreLabel(LaneEvent le,int[][] lescores,int k){
+		for (int i = 0; i <= le.frameNum - 1; i++) {
+			if (lescores[k][i] != 0)
+				scoreLabel[k][i].setText((Integer.valueOf(lescores[k][i])).toString());
+		}
+	}
+
+	public void setBallLabel(LaneEvent le,int k){
+		for (int i = 0; i < 21; i++) {
+			int val = ((int[]) le.score.get(bowlers.get(k)))[i];
+			if(val == -1){
+				continue;
+			}
+
+			int val1 = 0;
+			if(i > 0) {
+				val1 = ((int[]) le.score.get(bowlers.get(k)))[i - 1];
+			}
+
+			String st = checkString(le,val,val1,i,k);
+			ballLabel[k][i].setText(st);
+		}
+	}
+
+	public String checkString(LaneEvent le, int val, int val1, int i, int k){
+		String st = "";
+		if (val == 10 && (i % 2 == 0 || i == 19))
+			st = "X";
+		else if (val + val1 == 10 && i % 2 == 1)
+			st = "/";
+		else if (val == -2 )
+			st = "F";
+		else
+			st = (Integer.valueOf(((int[]) le.score.get(bowlers.get(k)))[i])).toString();
+		return st;
 	}
 
 	public void actionPerformed(ActionEvent e) {

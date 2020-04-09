@@ -37,6 +37,7 @@ public class LaneEvent implements  LaneEventInterface{
 	final int index;
 	final int frameNum;
 	final boolean mechProb;
+	final int check;
 	
 	public LaneEvent(Map<Object,Object> params){
 		CalculateScore calculatescore = (CalculateScore) params.get("calculateScore");
@@ -48,6 +49,12 @@ public class LaneEvent implements  LaneEventInterface{
 		frameNum = (int) params.get("frameNumber");
 		ball = (int) params.get("ball");
 		mechProb = (boolean) params.get("gameIsHalted");
+		if (frameNum == 1 && ball == 0 && index == 0) {
+			check = 1;
+		}
+		else{
+			check = 0;
+		}
 	}
 
 	public Party getParty() {
