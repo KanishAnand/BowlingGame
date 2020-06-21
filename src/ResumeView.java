@@ -54,7 +54,7 @@ public class ResumeView implements ActionListener, ListSelectionListener {
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         allParties.addListSelectionListener(this);
         partyPanel.add(partyPane);
-        JPanel buttonPanel = ViewComponents.GridLayoutPanel(5,1);
+        JPanel buttonPanel = ViewComponents.GridLayoutPanel(1,1);
         Insets buttonMargin = new Insets(4, 4, 4, 4);
 
         resume = ViewComponents.MakeButtons("Resume selected game", buttonPanel);
@@ -77,6 +77,7 @@ public class ResumeView implements ActionListener, ListSelectionListener {
             try {
                 PausedLanesFile.resumePausedLane(index);
                 PartyQueue.resumePartyQueue(controlDesk, (Vector) lanes.get(index));
+                win.setVisible(false);
             } catch (IOException ex) {
                 ex.printStackTrace();
             } catch (ClassNotFoundException ex) {

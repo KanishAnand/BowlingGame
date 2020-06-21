@@ -43,19 +43,19 @@ public class ControlDeskView implements ActionListener, ControlDeskObserver{
 		JPanel colPanel = ViewComponents.MakeMainPanel();
 
 		// Controls Panel
-		JPanel controlsPanel = ViewComponents.MakePanel(3,1,"Controls");
+		JPanel controlsPanel = ViewComponents.MakePanel(5,1,"Controls");
 
 		//Buttons
 		addParty = ViewComponents.MakeButtons("Add Party",controlsPanel);
 		addParty.addActionListener(this);
 		assign = ViewComponents.MakeButtons("Assign Lanes",controlsPanel);
 		assign.addActionListener(this);
+		query = ViewComponents.MakeButtons("Records",controlsPanel);
+		query.addActionListener(this);
+		resume = ViewComponents.MakeButtons("Resume games",controlsPanel);
+		resume.addActionListener(this);
 		finished = ViewComponents.MakeButtons("Finished",controlsPanel);
 		finished.addActionListener(this);
-		query = ViewComponents.MakeButtons("Query",controlsPanel);
-		query.addActionListener(this);
-		resume = ViewComponents.MakeButtons("Resume",controlsPanel);
-		resume.addActionListener(this);
 		// Lane Status Panel
 		JPanel laneStatusPanel = ViewComponents.MakePanel(numLanes,1,"Lane Status");
 

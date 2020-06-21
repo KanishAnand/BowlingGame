@@ -74,8 +74,6 @@ public class ScoreHistoryFile {
 			if (isGeneral || (!isGeneral && score.getNickName().equals(nick))) // isGeneral is a Boolean variable
 			{
 				int intScore = Integer.parseInt(score.getScore());
-				System.out.println(score.getScore());
-				System.out.println(intScore);
 
 				if (intScore > max)
 				{
@@ -90,10 +88,10 @@ public class ScoreHistoryFile {
 			}
 		}
 
-		Vector<String> toreturn = new Vector<>();
-		toreturn.add(Integer.toString(max));
+		Vector toreturn = new Vector<>();
+		toreturn.add(max);
 		toreturn.add(bestplayer);
-		toreturn.add(Integer.toString(min));
+		toreturn.add(min);
 		toreturn.add(worstplayer);
 
 		return toreturn;
